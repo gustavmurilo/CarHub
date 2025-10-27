@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title id="title-pagina"> - Cadastro</title>
+    <link rel="icon" id="link_icon_navegador">
+    <script src="assets/js/login-api.js" defer></script>
+    <script src="assets/js/recuperar-senha.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+    </header>
+
+    <main class="main">
+        <div id="div-form-login">
+            <form class="container-login" id="formCadastroUsuario">
+                <h1 class="title">Crie uma conta com seu email</h1>
+
+                <input type="hidden" id="id-usuario-cad">
+
+                <a class="fechar" href="index.html">&times;</a>
+                <div class="div-input">
+                    <label for="input">Nome completo</label>
+                    <input class="input" name="nome_completo" type="text" required />
+                </div>
+                <div class="div-input">
+                    <label for="input">Email</label>
+                    <input class="input" name="email" type="text" required />
+                </div>
+                <div class="div-input">
+                    <label for="input">Senha</label>
+                    <input name="senha_hash" type="password" id="input-senha" required />
+                    <i class="fa-solid fa-eye" id="mostrarSenha"></i>
+                </div>
+                <div class="div-input-requerimetos-senha">
+                    
+                    <p class="requerimetos-senha errado" id="length">
+                    <i class="fa-solid fa-circle"></i>
+                    A senha deve ter pelo menos 8 caracteres
+                    </p>
+
+                    <p class="requerimetos-senha errado" id="symbol">
+                    <i class="fa-solid fa-circle"></i>
+                    A senha deve conter pelo menos um símbolo especial
+                    </p>
+
+                    <p class="requerimetos-senha errado" id="uppercase">
+                    <i class="fa-solid fa-circle"></i>    
+                    A senha deve conter pelo menos uma letra maiúscula
+                    </p>
+
+                    <p class="requerimetos-senha errado" id="number">
+                    <i class="fa-solid fa-circle"></i>    
+                    A senha deve conter pelo menos um número
+                    </p>
+
+                </div>
+                <div class="divButtonSubmit">
+                    <button class="btn-acao" type="submit">Criar conta</button>
+                    <p id="mensagemError"></p>
+                </div>
+            </form>
+            <p class="texto-pergunta">Já possui uma conta? <span class="link-redirect"><a href="login.html">Faça login</a></span></p>
+        </div>
+
+        <!-- Form Verificar Email -->
+        <form class="container-login" id="formValidarEmail">
+            <h1 class="title">Email enviado!</h1>
+            <i class="fa-solid fa-envelope icone-modal"></i>
+
+            <p class="mensagem">Insira o código de 6 dígitos enviado para <span id="email-user-validacao"></span> e verifique sua conta</p>
+            <div class="div-codigo" id="div-codigo-validacao">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+            </div>
+            <button class="btn-acao" type="submit">Verificar</button>
+            <p id="enviar-novamente-validacao">Enviar novamente (<span id="tempoEsperaValidacao">30</span>s)</p>
+        </form>
+
+        <!-- Div alert message -->
+        <div id="divAlertMessage"></div>
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

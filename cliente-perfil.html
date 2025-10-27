@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/perfil.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <link rel="icon" id="link_icon_navegador">
+    <title id="title-pagina"> - Perfil</title>
+    <!-- TERMINAR ( OLHAR O FIGMA) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- JS do NAV específico dessa página -->
+    <script src="assets/js/nav-perfil-cliente.js" defer></script>
+    <!-- Arquivo JS padrão para todas as páginas de perfil -->
+    <script src="assets/js/perfil-api.js" defer></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" id="aDivLogo">
+            <div class="div-logo-title">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+                <h1>Minha Garagem</h1>
+            </div>
+        </a>
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+        <div class="container-perfil" id="barra-lateral">
+            <div class="perfil-usuario">
+                <i class="fa-solid fa-circle-user"></i>
+                <h2 id="nomeNav"></h2>
+                <p id="emailNav"></p>
+            </div>
+            <nav>
+                <a href="veiculos.html"><i class="fa-solid fa-magnifying-glass"></i>Buscar Veiculo</a>
+                <a id="link_minhaConta" class="selecionado"><i class="fa-solid fa-user"></i>Minha Conta</a>
+                <a id="link_reservas"><i class="fa-solid fa-calendar-days"></i>Reservas</a>
+                <a id="link_financiamento"><i class="fa-solid fa-handshake"></i>Parcelamento</a>
+                <a id="link_hCompras"><i class="fa-solid fa-clock-rotate-left"></i>Historico de Compras</a>
+                <a id="link_ajuda"><i class="fa-solid fa-circle-question"></i>FAQ</a>
+                <a id="deslogarConta"><i class="fa-solid fa-right-to-bracket"></i>Sair</a>
+            </nav>
+            <p id="fecharBarraLateral">&times;</p>
+            <div id="deletar-usuario">
+                <i class="fa-solid fa-trash-can"></i>
+                <p>Deletar conta</p>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+    <main>
+        <section class="container" id="conteudo">
+            <!-- Div Minha Conta -->
+            <div class="container-info-input" id="minha-conta">
+                <div class="informacoes-input">
+                    <h3>Campos com asteriscos ( * ) são obrigatórios </h3>
+                    <form id="formEditarUsuario">
+                        <div class="container-input">
+                            <label class="text" for="input">E-mail*</label>
+                            <input class="input" required name="email" type="email" id="email_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">Nome Completo*</label>
+                            <input class="input" required name="nome_completo" type="text" id="nome_completo_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text date" for="input">Data de nascimento*</label>
+                            <input class="input" required name="data_nascimento" type="date"
+                                id="data_nascimento_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">CPF ou CNPJ*</label>
+                            <input class="input" required name="cpf_cnpj" type="text" id="cpf_cnpj_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">Telefone*</label>
+                            <input class="input" required name="telefone" type="tel" id="telefone_input" />
+                        </div>
+                        <h3>Atualizar senha (opcional)</h3>
+                        <div class="container-input">
+                            <label class="text" for="input" id="label-senha-atual">Senha atual</label>
+                            <input class="input" name="senha_hash" type="password" id="input-senha-atual" />
+                            <i class="fa-solid fa-eye" id="mostrarSenhaAtual"></i>
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input" id="label-senha-nova">Senha nova</label>
+                            <input class="input" name="senha_nova" type="password" id="input-senha-nova" />
+                            <i class="fa-solid fa-eye" id="mostrarSenhaNova"></i>
+                        </div>
+                        <button type="submit">Atualizar os dados</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Div Histórico de Compras -->
+            <div id="historico-compras">
+                <div class="div-carrossel">
+                    <div class="conteudo" id="div-historico-compras"></div>
+                </div>
+            </div>
+
+            <!-- Div ajuda -->
+            <div id="ajuda">
+                <div class="div-ajuda">
+                    <p>Perguntas Frequentes</p>
+                    <div class="pai-card-ajuda">
+                        <div class="container-card-ajuda">
+                            <div class="card-ajuda">
+                                <i class="fa-solid fa-circle-user i-ajuda"></i>
+                                <p>Cadastro</p>
+                            </div>
+                            <div class="card-ajuda">
+                                <i class="fa-solid fa-cart-shopping i-ajuda"></i>
+                                <p></p>Comprar</p>
+                            </div>
+                            <div class="card-ajuda">
+                                <i class="fa-solid fa-handshake i-ajuda"></i>
+                                <p>Parcelamento</p>
+                            </div>
+                            <div class="card-ajuda">
+                                <i class="fa-solid fa-screwdriver-wrench i-ajuda"></i>
+                                <p>Manutenção</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div de Reservas -->
+            <div id="reservas">
+                <div class="div-carrossel">
+                    <div class="conteudo" id="div-reservas"></div>
+                </div>
+            </div>
+
+            <!-- Tabela de parcelas -->
+            <div id="parcelas" style="max-width: 100%;">
+                <div style="width: 90%;position: relative;left: 5%;">
+                    <div class="filtro-users-wrapper2">
+                        <div class="status-box">
+                            <button class="btn-status-box" id="voltar_parcela"><i
+                                    class="fa-solid fa-arrow-left"></i></button>
+                            <select id="status-select">
+                                <option value="Todas">Todas</option>
+                                <option value="Amortizada">Amortizada</option>
+                                <option value="Paga">Paga</option>
+                                <option value="Pendente">Pendente</option>
+                                <option value="Amortizada Paga">Paga ou Amortizada</option>
+                            </select>
+                        </div>
+
+                        <button id="pagarParcela" class="cad-user2">Pagar parcela</button>
+                    </div>
+                    <div class="table-container">
+                        <table class="parcelas-table">
+                            <thead>
+                                <tr>
+                                    <th>N°</th>
+                                    <th>Valor parcela</th>
+                                    <th>Valor amortizado</th>
+                                    <th>Data de vencimento</th>
+                                    <th>Data de pagamento</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-parcelas"></tbody>
+                        </table>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal pagar parcela -->
+            <div class="modal-pagar-parcela" id="modal-pagar-parcela">
+                <i class="fa-solid fa-xmark btn-fechar-pagar-parcela"></i>
+                <p class="title-forma">Pagar parcela</p>
+                <div class="div-pagar">
+                    <div class="div-fpagamento" id="parcela-mais-recente">
+                        <p>Mais recente</p>
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <div class="div-fpagamento" id="parcela-amortizar">
+                        <p>Amortizar</p>
+                        <i class="fa-solid fa-dollar-sign"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal pix -->
+            <div class="modal-pix" id="modal-pix">
+                <i class="fa-solid fa-arrow-left voltar-modal-pagar-parcela"></i>
+                <p class="title-forma">QR Code</p>
+                <input type="hidden" id="input-id-parcela">
+                <input type="hidden" id="input-amortizada">
+                <div class="div-qrcode">
+                    <!-- Imagem qr code pix -->
+                    <div id="loading-img-qrcode"></div>
+                    <div id="img-qrcode"></div>
+                    <div class="div-codigo-pix">
+                        <p id="p-codigo-pix"></p>
+                        <i id="copiar-codigo-pix" class="fa-solid fa-copy"></i>
+                    </div>
+                    <p id="p-mensagem-qr-code">Pronto! Agora é so escanear o <span>QR Code</span> acima e pagar sua
+                        parcela no valor de <span id="valor-parcela">~</span></p>
+                </div>
+                <button id="confirmar-pagamento-parcela" class="disabled">Confirmar pagamento</button>
+            </div>
+
+            <!-- Div de Financiamento -->
+            <div class="container-financiamento" id="financiamento">
+                <div class="div-carrossel">
+                    <div class="conteudo" id="div-financiamento">
+                        <div class="pai-financiamento">
+                            <div class="container-car-financia">
+                                <div class="container-card-car-financia">
+                                    <div class="card-car-financia"><img src="./assets/img/logo-icon-navegador.png"
+                                            alt="logo NetCars"></div>
+                                    <div class="div-car-p1">
+                                        <div class="div-car-p2">
+                                            <p id="marca-financ"></p>
+                                        </div>
+                                        <p id="versao-financ"></p>
+                                        <p id="ano-financ"></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="div-car-p3">
+                                        <p class="qnt-parcelas-financ"></p>
+                                        <p class="price valor-total-financ"></p>
+                                        <p class="entrada-financ entrada"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="div-card-financia">
+                                <div id="parcelas_a_pagar" class="card-financia">
+                                    <i class="fa-solid fa-circle-plus i-financia"></i>
+                                    <p>Parcelas a pagar</p>
+                                </div>
+                                <div id="parcelas_pagas" class="card-financia">
+                                    <i class="fa-regular fa-clock i-financia"></i>
+                                    <p>Parcelas pagas</p>
+                                </div>
+                                <div id="ver_veiculo_financiamento" class="card-financia">
+                                    <i class="fa-solid fa-car i-financia"></i>
+                                    <p>Ver veículo</p>
+                                </div>
+                            </div>
+
+                            <div class="div-car-p4">
+                                <p class="qnt-parcelas-financ"></p>
+                                <p class="price valor-total-financ"></p>
+                                <p class="entrada-financ entrada"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Div Alert Message -->
+        <div id="divAlertMessage"></div>
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome footer"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

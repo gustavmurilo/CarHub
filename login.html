@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title id="title-pagina"> - Login</title>
+    <link rel="icon" id="link_icon_navegador">
+    <script src="assets/js/login-api.js" defer></script>
+    <!-- JS para enviar email e recuperar senha -->
+    <script src="assets/js/recuperar-senha.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+    </header>
+
+    <main class="main">
+        <div id="div-form-login">
+            <form class="container-login" id="formLoginUsuario">
+                <h1 class="title">Digite o seu e-mail e senha</h1>
+                <a class="fechar" href="index.html">&times;</a>
+                <div class="div-input">
+                    <label for="input-email">Email</label>
+                    <input name="email" id="input-email" type="text" required />
+                </div>
+                <div class="div-button-forgot-password">
+                    <div class="div-input">
+                        <label for="input-senha">Senha</label>
+                        <input name="senha_hash" type="password" id="input-senha" required />
+                        <i class="fa-solid fa-eye" id="mostrarSenha"></i>
+                    </div>
+                    <p id="forgot-password">Esqueci minha senha</p>
+                </div>
+                <div class="divButtonSubmit">
+                    <button class="btn-acao" type="submit">Entrar</button>
+                    <p id="mensagemError"></p>
+                </div>
+            </form>
+            <p class="texto-pergunta">Não tem uma conta? <span class="link-redirect"><a href="cadastro.html">Crie a
+                        sua</a></span></p>
+        </div>
+
+        <!-- Form Verificar Email -->
+        <form class="container-login" id="formVerificarCodigo">
+            <h1 class="title">Email enviado!</h1>
+            <i class="fa-solid fa-envelope icone-modal"></i>
+
+            <p class="mensagem">Insira o código de 6 dígitos enviado para <span id="email-user"></span></p>
+            <div class="div-codigo" id="div-codigo-senha">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+            </div>
+            <button class="btn-acao" type="submit">Verificar</button>
+            <p id="enviar-novamente-senha">Enviar novamente (<span id="tempoEsperaSenha">30</span>s)</p>
+        </form>
+
+        <!-- Form Alterar Senha -->
+        <form class="container-login" id="formAltSenha">
+            <h1 class="title">Sucesso!</h1>
+            <i class="fa-solid fa-circle-check icone-modal"></i>
+            <p class="mensagem">Digite sua nova senha:</p>
+            <div class="div-input">
+                <label for="senha-nova">Senha nova</label>
+                <input type="password" name="senha-nova" id="senha-nova" required>
+                <i class="fa-solid fa-eye" id="mostrarSenhaNova"></i>
+            </div>
+            <div class="div-input">
+                <label for="repetir-senha-nova">Repetir senha nova</label>
+                <input type="password" name="repetir-senha-nova" id="repetir-senha-nova" required>
+                <i class="fa-solid fa-eye" id="mostrarRepetirSenhaNova"></i>
+            </div>
+
+            <button type="submit" class="btn-acao">Salvar</button>
+        </form>
+
+        <!-- Form Verificar Email -->
+        <form class="container-login" id="formValidarEmail">
+            <h1 class="title">Email enviado!</h1>
+            <i class="fa-solid fa-envelope icone-modal"></i>
+
+            <p class="mensagem">Insira o código de 6 dígitos enviado para <span id="email-user-validacao"></span> e verifique sua conta</p>
+            <div class="div-codigo" id="div-codigo-validacao">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+            </div>
+            <button class="btn-acao" type="submit">Verificar</button>
+            <p id="enviar-novamente-validacao">Enviar novamente (<span id="tempoEsperaValidacao">30</span>s)</p>
+        </form>
+
+        <!-- Div alert message -->
+        <div id="divAlertMessage"></div>
+    </main>
+    
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

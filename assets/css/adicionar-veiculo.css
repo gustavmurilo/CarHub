@@ -1,0 +1,891 @@
+/* Main */
+
+main {
+    margin-top: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#fase-1 {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#fase-2, #fase-3-carro, #fase-3-moto, #fase-4-carro, #fase-4-moto, #fase-5-moto, #fase-5 {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Div Alert Message */
+
+#divAlertMessage {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 30px;
+    right: 30px;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.alertMessage {
+    padding: 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cor-bg-sec);
+    border-radius: 10px;
+}
+
+/* End Div Alert Message */
+
+/* Classes universais para todas as etapas */
+.container-branco {
+    width: 90vw;
+    height: 83vh;
+    border-radius: 12px;
+    border: 1px solid #D0CFDA;
+    background: var(--cor-bg-sec);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    /* Adicionado para permitir o posicionamento dos botões dentro */
+}
+
+
+.voltar {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-items: center;
+
+    & i {
+        margin-right: 7px;
+    }
+}
+
+.continuar {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    width: 121px;
+    height: 42px;
+    border-radius: 8px;
+    background: var(--roxo);    ;
+    color: var(--cor-bg-sec);
+    text-align: center;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+    & p {
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 18.8px;
+    }
+
+    & i {
+        margin-left: 7px;
+    }
+    &:hover {
+        background-color: var(--hover-roxo);
+    }
+}
+
+/* Fase 1 */
+.titulo {
+    color: #000;
+    font-family: Poppins;
+    font-size: 29px;
+    /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    /* Ajustado para 125% */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Input placa em caixa alta */
+#placa {
+    text-transform: uppercase;
+}
+
+.placa {
+    width: 566px;
+    height: 244px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    border: 4px solid #EDECF2;
+    background: var(--cor-bg-sec);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & input {
+        text-align: center;
+        position: relative;
+        bottom: -45px;
+        border: none;
+        outline: none;
+        background: transparent;
+        width: 250px;
+        height: 50px;
+        flex-shrink: 0;
+        color: #6b6b6b;
+        font-family: Poppins, sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18.8px;
+    }
+
+    & .linha {
+        width: 456px;
+        height: 3px;
+        flex-shrink: 0;
+        background: #D0CFDA;
+        position: relative;
+        bottom: -55px;
+    }
+}
+
+.div-azul {
+    width: 100%;
+    height: 83px;
+    flex-shrink: 0;
+    border-radius: 16px 16px 0px 0px;
+    background: #363676;
+    position: relative;
+}
+
+.logo-brazil {
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    background: url(../img/logo-brasil.png) 50% / cover no-repeat;
+    position: absolute;
+    z-index: 2;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.aviso {
+    width: 402px;
+    height: 91px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #16A6C7;
+    margin-top: 30px;
+}
+
+.escudo-aviso {
+    position: relative;
+    color: var(--cor-bg-sec);
+    left: 18px;
+    top: 18px;
+}
+
+.texto-aviso {
+    width: 345px;
+    /* Ajustado para 125% */
+    color: var(--cor-bg-sec);
+    font-family: Poppins, sans-serif;
+    /* Adicionando uma fallback */
+    font-size: 12px;
+    /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.77px;
+    /* Ajustado para 125% */
+    position: relative;
+    left: 45px;
+    bottom: 5px;
+}
+
+/* END FASE 1 */
+
+/* Fase 2 */
+
+.veiculo {
+    cursor: pointer;
+    width: 558px;
+    height: 122px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: rgba(217, 217, 217, 0);
+    box-shadow: 0px 4px 18.8px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    border: 3px solid transparent;
+    &.active {
+        border: 3px solid var(--roxo);
+    }
+    & p {
+        color: #000;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18.774px;
+        /* Ajustado para 125% de zoom */
+        position: relative;
+        left: 32.8px;
+        top: 19.2px;
+    }
+
+    & .icon-veiculo {
+        width: 197px;
+        height: 100%;
+        flex-shrink: 0;
+        border-radius: 15px;
+        background: var(--cor-bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & i {
+            font-size: 2.4rem;
+            height: fit-content;
+            flex-shrink: 0;
+        }
+    }
+
+}
+
+.veiculo:not(:last-child) {
+    margin-bottom: 31px;
+}
+
+.titulo2 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 29px;
+    /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    /* Ajustado para 125% */
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Fim da fase 2 */
+
+/* Fase 3 */
+
+.titulo3 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 29px;
+    /* Ajustado para 125% */
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    /* Ajustado para 125% */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 26px;
+}
+
+.pai-div-input {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 800px;
+    margin-bottom: 40px;
+}
+
+.div-input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Estilo do label (estado inicial) */
+.div-input label {
+    font-size: 0.85rem;
+    color: var(--cor-texto-apagado);
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    background: var(--cor-bg-sec);
+    width: fit-content;
+    transition: 0.3s;
+    z-index: 1;
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+/* Estado ativo (quando o input/select está focado ou possui valor) */
+.div-input label.active,
+.div-input:focus-within label {
+    color: var(--roxo);
+    top: 0;
+    font-size: 0.75rem;
+    z-index: 3;
+}
+
+/* Estilo dos inputs e selects */
+.div-input select,
+.div-input input {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    border: 2px #e0e1e4 solid;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    background: transparent;
+    z-index: 2;
+    appearance: none;
+    cursor: pointer;
+}
+
+.div-input select:focus,
+.div-input input:focus {
+    border: 2px var(--roxo) solid;
+}
+
+.container-2labels {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-2labels .div-input {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.radio-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* Espaço entre o label principal e os rádios */
+    & label {
+        color: var(--cor-texto);
+    }
+    & span {
+        color: var(--cor-texto);
+        font-weight: 600;
+    }
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre o “bolinha” e o texto “Sim”/“Não” */
+    cursor: pointer;
+}
+
+/* Esconde o input original e cria um “bolinha” customizado */
+.radio-group input[type="radio"] {
+    /* Remove o estilo padrão do rádio */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Cria um círculo branco com borda */
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--cor-texto-apagado);
+    border-radius: 50%;
+    background-color: var(--cor-bg-sec);
+    position: relative;
+    cursor: pointer;
+}
+
+/* Quando o rádio está marcado */
+.radio-group input[type="radio"]:checked {
+    border-color: var(--roxo); /* Borda roxa */
+}
+
+/* Bolinha roxa dentro do círculo quando está marcado */
+.radio-group input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    background-color: var(--roxo);
+    width: 10px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Fim da fase 3 */
+
+/* Fase 5 */
+
+#upload-imagem {
+    display: none;
+    /* Esconde o input padrão */
+}
+
+.upload-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    /* Ajuste conforme necessário */
+    height: 150px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.upload-label i {
+    font-size: 2.3rem;
+    color: var(--cor-texto-apagado);
+}
+
+.preview-item {
+    width: 100px;  
+    height: 100px; 
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 3px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#fase-5 {
+    top: -60px;
+    & .subtitulo {
+        margin-bottom: 10px;
+    }
+}
+.div-preview-container-pai {
+    position: absolute;
+    bottom: -150px;
+    width: 500px;
+    height: fit-content;
+    overflow: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#preview-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Fim do Main */
+
+/* Responsive Styles for adicionar-veiculo.css */
+
+/* Tablets and smaller desktops (max-width: 992px) */
+@media screen and (max-width: 992px) {
+    .container-branco {
+        width: 95vw;
+        height: auto;
+        min-height: 80vh;
+        padding: 30px 20px 80px;
+    }
+
+    .pai-div-input {
+        width: 90%;
+        max-width: 600px;
+    }
+
+    .placa {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    .placa .linha {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    .aviso {
+        width: 90%;
+        max-width: 380px;
+    }
+
+    .texto-aviso {
+        width: 80%;
+        font-size: 11px;
+    }
+
+    .veiculo {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    .titulo, .titulo2, .titulo3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    #fase-5 {
+        top: 0;
+    }
+    
+    .div-preview-container-pai {
+        position: relative;
+        bottom: 0;
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    #preview-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .container-branco {
+        width: 98vw;
+        padding: 20px 10px 70px;
+    }
+
+    .voltar, .continuar {
+        bottom: 15px;
+    }
+
+    .voltar {
+        left: 20px;
+    }
+
+    .continuar {
+        right: 20px;
+    }
+
+    .pai-div-input {
+        width: 95%;
+        gap: 15px;
+    }
+
+    .titulo, .titulo2, .titulo3 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 15px;
+    }
+
+    .placa input {
+        font-size: 30px;
+    }
+
+    .veiculo {
+        height: 90px;
+    }
+
+    .veiculo .icon-veiculo {
+        width: 120px;
+    }
+
+    .veiculo p {
+        font-size: 14px;
+        left: 20px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .radio-group label:first-child {
+        margin-bottom: 5px;
+    }
+
+    .div-input select, 
+    .div-input input {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .container-2labels {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .aviso {
+        padding: 10px;
+        height: auto;
+    }
+
+    .texto-aviso {
+        width: 75%;
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .escudo-aviso {
+        top: 12px;
+    }
+
+    .preview-item {
+        width: 80px;
+        height: 80px;
+    }
+
+    .upload-label {
+        width: 150px;
+        height: 120px;
+    }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .container-branco {
+        min-height: 75vh;
+        padding: 15px 10px 60px;
+    }
+
+    .titulo, .titulo2, .titulo3 {
+        font-size: 18px;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .placa {
+        width: 90%;
+        height: 200px;
+    }
+
+    .placa input {
+        font-size: 24px;
+        bottom: -35px;
+    }
+
+    .placa .linha {
+        bottom: -45px;
+    }
+
+    .div-azul {
+        height: 70px;
+    }
+
+    .logo-brazil {
+        width: 30px;
+        height: 30px;
+    }
+
+    .aviso {
+        margin-top: 15px;
+        width: 90%;
+        height: auto;
+        padding: 8px;
+    }
+
+    .escudo-aviso {
+        font-size: 14px;
+        left: 12px;
+        top: 10px;
+    }
+
+    .texto-aviso {
+        font-size: 9px;
+        line-height: 14px;
+        left: 35px;
+    }
+
+    .veiculo {
+        height: 80px;
+        width: 90%;
+    }
+
+    .veiculo .icon-veiculo {
+        width: 100px;
+    }
+
+    .veiculo .icon-veiculo i {
+        font-size: 1.8rem;
+    }
+
+    .veiculo p {
+        font-size: 13px;
+        left: 15px;
+        top: 15px;
+    }
+
+    .veiculo:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .div-input label {
+        font-size: 0.8rem;
+    }
+
+    .div-input label.active,
+    .div-input:focus-within label {
+        font-size: 0.7rem;
+    }
+
+    .div-input select, 
+    .div-input input {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .voltar, .continuar {
+        bottom: 12px;
+    }
+
+    .voltar {
+        left: 15px;
+        font-size: 12px;
+    }
+
+    .continuar {
+        right: 15px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .continuar p {
+        font-size: 12px;
+    }
+
+    .upload-label {
+        width: 120px;
+        height: 100px;
+    }
+
+    .upload-label i {
+        font-size: 1.8rem;
+    }
+
+    .preview-item {
+        width: 70px;
+        height: 70px;
+        margin: 3px;
+    }
+
+    .remove-btn {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+    }
+}
+
+/* Extra small devices (max-width: 360px) */
+@media screen and (max-width: 360px) {
+    .container-branco {
+        padding: 10px 5px 50px;
+    }
+
+    .placa {
+        height: 180px;
+    }
+
+    .placa input {
+        font-size: 20px;
+        width: 200px;
+    }
+
+    .veiculo {
+        height: 70px;
+    }
+
+    .veiculo .icon-veiculo {
+        width: 80px;
+    }
+
+    .veiculo .icon-veiculo i {
+        font-size: 1.5rem;
+    }
+
+    .veiculo p {
+        font-size: 12px;
+        left: 10px;
+    }
+
+    .div-input label {
+        font-size: 0.75rem;
+    }
+
+    .div-input select, 
+    .div-input input {
+        padding: 7px;
+        font-size: 0.75rem;
+    }
+
+    .continuar {
+        width: 90px;
+    }
+
+    .continuar p {
+        font-size: 11px;
+    }
+
+    .voltar {
+        font-size: 11px;
+    }
+
+    .voltar i, .continuar i {
+        font-size: 0.8rem;
+    }
+
+    .preview-item {
+        width: 60px;
+        height: 60px;
+    }
+}

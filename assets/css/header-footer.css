@@ -1,0 +1,554 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --roxo: #6C1DE9;
+    --hover-roxo: #6C1DE9;
+    --cor-bg: #ECEDF2;
+    --cor-bg-sec: #FFFFFF;
+    --cor-texto: #262627;
+    --cor-texto-apagado: #AEAEBA;
+    --cor-titles: #696977;
+    --roxo-claro: #ECE1FE;
+}
+
+body {
+    background-color: var(--cor-bg);
+}
+
+/* Header */
+header {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--cor-bg-sec);
+    display: flex;
+    padding: 12px 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Div */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tip */
+.tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px 10px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 1;
+    top: 115%;
+    /* Aparece abaixo */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Tooltip entrar perfil */
+.div-tip-user:hover .tip-user {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip botão reserva */
+.div-tip-reservar:hover .tip-reservar {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip editar anúncio */
+.div-tip-edit:hover .tip-edit {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip adicionar manutenção */
+.div-tip-manu:hover .tip-manu {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip cancelar reserva */
+.div-tip-canc-reserva:hover .tip-canc-reserva {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip excluir anúncio */
+.div-tip-del-anuncio:hover .tip-del-anuncio {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltip para adicionar serviço */
+.div-tip-add-serv:hover .tip-add-serv {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Barra lateral */
+
+#barra-lateral {
+    display: flex;
+    background-color: var(--cor-bg-sec);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    & .div-usuario {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        & i {
+            font-size: 1.8rem;
+            color: var(--cor-texto);
+        }
+
+        & p {
+            font-size: 1.2rem;
+            color: var(--cor-texto);
+            font-weight: 600;
+        }
+    }
+
+    & #fecharBarraLateral {
+        display: none;
+        position: absolute;
+        cursor: pointer;
+        top: 2px;
+        right: 15px;
+        font-size: 2.3rem;
+    }
+
+    & nav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        & ul {
+            display: flex;
+            gap: 70px;
+            list-style-type: disc;
+
+            & li,
+            a {
+                padding: 35px 0;
+                cursor: pointer;
+                color: var(--cor-texto);
+                transition: 0.1s;
+
+                &:hover {
+                    color: var(--roxo);
+                }
+            }
+        }
+    }
+}
+
+.div-logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+        width: auto;
+        height: 25px;
+    }
+
+    & p {
+        color: var(--cor-texto);
+        font-size: 2rem;
+        font-family: "Racing Sans One", serif;
+        text-transform: uppercase;
+        position: relative;
+        left: -5px;
+    }
+
+    & span {
+        color: var(--roxo);
+        font-size: 2rem;
+        font-family: "Racing Sans One", serif;
+        text-transform: uppercase;
+    }
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.sanduiche {
+    display: none;
+    width: 30px;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    & .linha1,
+    .linha2,
+    .linha3 {
+        border-radius: 10px;
+        width: 100%;
+        height: 4px;
+        background-color: var(--cor-texto);
+    }
+}
+
+.overlay-bg {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    display: none;
+}
+
+@keyframes abrirBarraLateral {
+    0% {
+        right: -100%;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+@keyframes fecharBarraLateral {
+    0% {
+        right: 0;
+    }
+
+    100% {
+        right: -100%;
+    }
+}
+
+@keyframes aparecerOverlay {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes sumirOverlay {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* Fim da barra lateral */
+
+/* Fim do Header */
+
+/* Modais */
+
+#modal-nav-veiculos {
+    background-color: var(--cor-bg-sec);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    padding-top: 15px;
+    top: 50px;
+    left: 44.5%;
+    transform: translateX(-50%);
+    position: fixed;
+    z-index: 95;
+
+    & div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        gap: 15px;
+        cursor: pointer;
+        transform: 0.1s;
+        border-radius: inherit;
+
+        &:hover {
+            background-color: var(--cor-bg);
+        }
+    }
+}
+
+#modal-login {
+    position: fixed;
+    z-index: 5;
+    top: 75px;
+    right: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--cor-bg-sec);
+    padding: 30px;
+    border-radius: 15px;
+    box-sizing: content-box;
+    width: 250px;
+
+    & .title {
+        font-size: 0.9rem;
+        color: var(--cor-texto);
+        font-weight: 500;
+    }
+
+    & .btn-login {
+        cursor: pointer;
+        background-color: var(--roxo);
+        color: var(--cor-bg-sec);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        border-radius: 15px;
+        padding: 15px;
+        transition: 0.1s;
+
+        &:hover {
+            background-color: var(--hover-roxo);
+        }
+    }
+
+    & #closeModalLogin {
+        position: absolute;
+        cursor: pointer;
+        top: -4px;
+        right: 6px;
+        font-size: 1.8rem;
+    }
+
+    & .subtitle {
+        color: var(--cor-titles);
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    & a {
+        color: var(--roxo);
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 0.85rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* Fim dos modais */
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+
+    & .div-contato {
+        background-color: var(--roxo);
+        padding: 40px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 100px;
+        width: inherit;
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 5px;
+
+            & .footer-title {
+                color: var(--cor-bg-sec);
+                font-weight: 600;
+            }
+
+            & .footer-text {
+                color: var(--cor-bg-sec);
+                font-weight: 300;
+                font-size: 0.85rem;
+                cursor: pointer;
+                transition: 0.1s;
+                padding: 10px 0;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            & #telefone-footer, #cidade-footer {
+                cursor: auto;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    & .div-logo {
+        padding: 15px 0;
+        background-color: var(--cor-bg-sec);
+        width: inherit;
+    }
+
+    & .div-direitos-reservados {
+        padding: 10px 0;
+        width: inherit;
+        background-color: var(--cor-texto);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        & p {
+            color: var(--cor-bg-sec);
+            font-size: 0.85rem;
+        }
+
+        & .net {
+            color: var(--roxo);
+            font-family: "Racing Sans One", serif;
+            text-transform: uppercase;
+
+        }
+
+        & .cars {
+            color: var(--cor-bg-sec);
+            font-family: "Racing Sans One", serif;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* Fim do Footer */
+
+/* Responsivo Header - Footer */
+
+@media (max-width: 1150px) {
+    header {
+        & .sanduiche {
+            display: flex;
+        }
+    }
+
+    .div-logo.hidden {
+        display: flex;
+    }
+
+    #barra-lateral {
+        display: none;
+        position: fixed;
+        width: 230px;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        flex-direction: column-reverse;
+        z-index: 999;
+        justify-content: center;
+        gap: 40px;
+
+        & nav {
+            position: static;
+            top: 0;
+            left: 0;
+            transform: none;
+
+            & ul {
+                padding-left: 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+
+                & a {
+                    padding: 15px 0;
+                }
+
+                & li {
+                    padding: 0;
+                }
+            }
+        }
+
+        & #fecharBarraLateral {
+            display: flex;
+        }
+
+        & .div-logo {
+            scale: 0.8;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    * {
+        font-size: 14px;
+    }
+
+    header {
+        height: 64px;
+        padding: 12px 25px;
+    }
+
+    footer {
+        & .div-contato {
+            align-items: center;
+            gap: 50px;
+            flex-direction: column;
+
+            & div {
+                align-items: center;
+            }
+        }
+    }
+}
+
+/* Fim do responsivo */

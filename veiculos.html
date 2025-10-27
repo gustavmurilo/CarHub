@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <!-- Scripts das funções essenciais do Header -->
+    <script src="assets/js/header.js" defer></script>
+    <!-- CSS do Footer, Header e Responsivo de ambos  -->
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+    <link rel="stylesheet" href="assets/css/veiculos.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title id="title-pagina"> - Veículos</title>
+    <link rel="icon" id="link_icon_navegador">
+    <!-- Script específico da página -->
+    <script src="assets/js/veiculos.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo hidden">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+        <div id="barra-lateral">
+            <a href="index.html">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">   
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-veiculos"><a href="">Veículos</a></li>
+                    <li><a href="#footer">Contato</a></li>
+                    <li><a href="faq.html">Ajuda</a></li>
+                </ul>
+            </nav>
+            <a href="" id="aDivEntrar">
+                <div class="div-usuario tooltip div-tip-user" id="divEntrar">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p id="nomeUsuario">Entrar</p>
+                    <span class="tooltip-text tip-user">Entrar na conta</span>
+                </div>
+            </a>
+            <p id="fecharBarraLateral">&times;</p>
+        </div>
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+
+    <main>
+        <section class="sec-filtro">
+            <div class="div-fluxo-filtro" id="fluxo-filtro">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="" id="tipo-veic">Carros</a>
+            </div>
+            <h2 id="h2-titulo">Carros semi-novos e usados</h2>
+            <div class="div-pai-filtro">
+                <i class="fa-solid fa-xmark" id="fecharFiltro"></i>
+                <div class="div-filtro-title">
+                    <div class="div-filtro-aplic">
+                        <h2>Filtros aplicados</h2>
+                        <p id="num-filtros-aplic">0</p>
+                    </div>
+                    <p id="limpar-filtros">Limpar filtros</p>
+
+                    <div class="filtros-aplic" id="filtros-aplic"></div>
+                </div>
+
+                <div class="linha"></div> <!-- Linha -->
+
+                <div class="div-tipo-veic">
+                    <div class="active" id="tipo-veic-carro">
+                        <i class="fa-solid fa-car"></i>
+                        <p>Carros</p>
+                    </div>
+                    <div id="tipo-veic-moto">
+                        <i class="fa-solid fa-motorcycle"></i>
+                        <p>Motos</p>
+                    </div>
+                    <div id="tipo-veic-bg-selecionado"></div>
+                </div>
+
+                <div class="linha"></div> <!-- Linha -->
+
+                <div class="div-filtro-title" id="marcas-carro">
+                    <h2>Lista de Marcas</h2>
+                    <div class="filtros-aplic">
+                        <ul class="itens-details">
+                            <li marca="Acura"><img src="assets/img/logo-carro/acura.png" alt="Acura"></li>
+                            <li marca="Alfa Romeo"><img src="assets/img/logo-carro/alfa romeo.png" alt="Alfa Romeo">
+                            </li>
+                            <li marca="Aston Martin"><img src="assets/img/logo-carro/aston martin.png"
+                                    alt="Aston Martin"></li>
+                            <li marca="Audi"><img src="assets/img/logo-carro/audi.png" alt="Audi"></li>
+                            <li marca="Bentley"><img src="assets/img/logo-carro/bentley.png" alt="Bentley"></li>
+                            <li marca="BMW"><img src="assets/img/logo-carro/bmw.png" alt="BMW"></li>
+                            <li marca="BYD"><img src="assets/img/logo-carro/byd.svg" alt="BYD"></li>
+                            <li marca="Bugatti"><img src="assets/img/logo-carro/bugatti.png" alt="Bugatti"></li>
+                            <li marca="Cadillac"><img src="assets/img/logo-carro/cadillac.png" alt="Cadillac"></li>
+                            <li marca="Chevrolet"><img src="assets/img/logo-carro/chevrolet.jpg" alt="Chevrolet"></li>
+                            <li marca="Chery"><img src="assets/img/logo-carro/chery.png" alt="Chery"></li>
+                            <li marca="Citroën"><img src="assets/img/logo-carro/citroen.jpg" alt="Citroën"></li>
+                            <li marca="Dodge"><img src="assets/img/logo-carro/dodge.jpg" alt="Dodge"></li>
+                            <li marca="Ferrari"><img src="assets/img/logo-carro/ferrari.png" alt="Ferrari"></li>
+                            <li marca="Fiat"><img src="assets/img/logo-carro/fiat.svg" alt="Fiat"></li>
+                            <li marca="Ford"><img src="assets/img/logo-carro/ford.png" alt="Ford"></li>
+                            <li marca="GMC"><img src="assets/img/logo-carro/gmc.png" alt="GMC"></li>
+                            <li marca="Honda"><img src="assets/img/logo-carro/honda.jpg" alt="Honda"></li>
+                            <li marca="Hyundai"><img src="assets/img/logo-carro/hyundai.jpg" alt="Hyundai"></li>
+                            <li marca="Infiniti"><img src="assets/img/logo-carro/infiniti.png" alt="Infiniti"></li>
+                            <li marca="JAC"><img src="assets/img/logo-carro/jac.png" alt="JAC"></li>
+                            <li marca="Jeep"><img src="assets/img/logo-carro/jeep.svg" alt="Jeep"></li>
+                            <li marca="Kia"><img src="assets/img/logo-carro/kia.jpg" alt="Kia"></li>
+                            <li marca="Land Rover"><img src="assets/img/logo-carro/land-rover.png" alt="Land Rover">
+                            </li>
+                            <li marca="Lexus"><img src="assets/img/logo-carro/lexus.jpg" alt="Lexus"></li>
+                            <li marca="Maserati"><img src="assets/img/logo-carro/maserati.jpg" alt="Maserati"></li>
+                            <li marca="McLaren"><img src="assets/img/logo-carro/mclaren.png" alt="McLaren"></li>
+                            <li marca="Mazda"><img src="assets/img/logo-carro/mazda.jpg" alt="Mazda"></li>
+                            <li marca="Mini"><img src="assets/img/logo-carro/mini.jpg" alt="Mini"></li>
+                            <li marca="Mitsubishi"><img src="assets/img/logo-carro/mitsubishi.svg" alt="Mitsubishi">
+                            </li>
+                            <li marca="Nissan"><img src="assets/img/logo-carro/nissan.png" alt="Nissan"></li>
+                            <li marca="Peugeot"><img src="assets/img/logo-carro/peugeot.png" alt="Peugeot"></li>
+                            <li marca="Porsche"><img src="assets/img/logo-carro/porsche.png" alt="Porsche"></li>
+                            <li marca="Renault"><img src="assets/img/logo-carro/renault.png" alt="Renault"></li>
+                            <li marca="Rolls-Royce"><img src="assets/img/logo-carro/rolls royce.png" alt="Rolls-Royce">
+                            </li>
+                            <li marca="Saab"><img src="assets/img/logo-carro/saab.png" alt="Saab"></li>
+                            <li marca="Smart"><img src="assets/img/logo-carro/smart.jpg" alt="Smart"></li>
+                            <li marca="Subaru"><img src="assets/img/logo-carro/subaru.jpg" alt="Subaru"></li>
+                            <li marca="Shineray"><img src="assets/img/logo-moto/shineray.png" alt="Shineray"></li>
+                            <li marca="Suzuki"><img src="assets/img/logo-carro/suzuki.svg" alt="Suzuki"></li>
+                            <li marca="Tesla"><img src="assets/img/logo-carro/tesla.jpg" alt="Tesla"></li>
+                            <li marca="Toyota"><img src="assets/img/logo-carro/toyota.png" alt="Toyota"></li>
+                            <li marca="Volkswagen"><img src="assets/img/logo-carro/volkswagem.png" alt="Volkswagen">
+                            </li>
+                            <li marca="Volvo"><img src="assets/img/logo-carro/volvo.png" alt="Volvo"></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="div-filtro-title" id="marcas-moto">
+                    <h2>Lista de Marcas</h2>
+                    <div class="filtros-aplic">
+                        <ul class="itens-details">
+                            <li marca="Aprilia"><img src="assets/img/logo-moto/aprilla.png" alt="Aprilia"></li>
+                            <li marca="Benelli"><img src="assets/img/logo-moto/benelli.png" alt="Benelli"></li>
+                            <li marca="BMW"><img src="assets/img/logo-moto/bmw.png" alt="BMW"></li>
+                            <li marca="Bultaco"><img src="assets/img/logo-moto/bultaco.png" alt="Bultaco"></li>
+                            <li marca="Cagiva"><img src="assets/img/logo-moto/cagiva.png" alt="Cagiva"></li>
+                            <li marca="CFMoto"><img src="assets/img/logo-moto/cfmoto.png" alt="CFMoto"></li>
+                            <li marca="Ducati"><img src="assets/img/logo-moto/ducati.png" alt="Ducati"></li>
+                            <li marca="Harley-Davidson"><img src="assets/img/logo-moto/harley_davidson.jpg"
+                                    alt="Harley-Davidson"></li>
+                            <li marca="Haojue"><img src="assets/img/logo-moto/haojue.png" alt="Haojue"></li>
+                            <li marca="Honda"><img src="assets/img/logo-moto/honda.png" alt="Honda"></li>
+                            <li marca="Husqvarna"><img src="assets/img/logo-moto/husqvarna.png" alt="Husqvarna"></li>
+                            <li marca="Indian Motorcycle"><img src="assets/img/logo-moto/indian-motorcycles.png"
+                                    alt="Indian Motorcycle"></li>
+                            <li marca="Kawasaki"><img src="assets/img/logo-moto/kawasaki.png" alt="Kawasaki"></li>
+                            <li marca="KTM"><img src="assets/img/logo-moto/ktm.png" alt="KTM"></li>
+                            <li marca="Kymco"><img src="assets/img/logo-moto/kymco.png" alt="Kymco"></li>
+                            <li marca="MV Agusta"><img src="assets/img/logo-moto/mv-agusta.png" alt="MV Agusta"></li>
+                            <li marca="Royal Enfield"><img src="assets/img/logo-moto/royal-enfield.png"
+                                    alt="Royal Enfield"></li>
+                            <li marca="Suzuki"><img src="assets/img/logo-moto/suzuki.svg" alt="Suzuki"></li>
+                            <li marca="Triumph"><img src="assets/img/logo-moto/triumph.png" alt="Triumph"></li>
+                            <li marca="Yamaha"><img src="assets/img/logo-moto/yamaha.png" alt="Yamaha"></li>
+                            <li marca="Zero Motorcycles"><img src="assets/img/logo-moto/zero-motorcycles.png"
+                                    alt="Zero Motorcycles"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="linha"></div> <!-- Linha -->
+
+                <div class="div-filtro-title" id="categorias-carro">
+                    <h2>Categoria</h2>
+                    <div class="filtros-aplic">
+                        <select name="categoria-carro" id="select-categoria-carro">
+                            <option value="">Todos</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Sedã">Sedã</option>
+                            <option value="Hatchback">Hatchback</option>
+                            <option value="Picape">Picape</option>
+                            <option value="Crossover">Crossover</option>
+                            <option value="Minivan">Minivan</option>
+                            <option value="Esportivo">Esportivo</option>
+                            <option value="Luxo">Luxo</option>
+                            <option value="Compacto">Compacto</option>
+                            <option value="Elétrico">Elétrico</option>
+                            <option value="Híbrido">Híbrido</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="div-filtro-title" id="categorias-moto">
+                    <h2>Categoria</h2>
+                    <div class="filtros-aplic">
+                        <select name="categoria-moto" id="select-categoria-moto">
+                            <option value="">Todos</option>
+                            <option value="Esportiva">Esportiva</option>
+                            <option value="Custom">Custom</option>
+                            <option value="Street">Street</option>
+                            <option value="Scooter">Scooter</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Off-road">Off-road</option>
+                            <option value="Naked">Naked</option>
+                            <option value="Touring">Touring</option>
+                            <option value="Trail">Trail</option>
+                            <option value="Big Trail">Big Trail</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="linha"></div> <!-- Linha -->
+
+                <div class="div-filtro-title">
+                    <h2>Localidade</h2>
+                    <div class="filtros-aplic f-d">
+                        <select type="text" name="cidade" id="estado-select">
+                            <option value="">Todos</option>
+                        </select>
+                        <select type="text" name="cidade" id="cidade-select" disabled>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="linha"></div> <!-- Linha -->
+
+                <div class="div-filtro-title">
+                    <h2>Preço</h2>
+                    <div class="filtros-aplic">
+                        <input type="text" name="Preço min" id="input-preco-min" placeholder="Preço mínimo">
+                        <input type="text" name="Preço max" id="input-preco-max" placeholder="Preço máximo">
+                    </div>
+                </div>
+
+                <div class="linha"></div> <!-- Linha -->
+
+                <div class="div-filtro-title">
+                    <h2>Ano</h2>
+                    <div class="filtros-aplic">
+                        <select name="Ano min" id="select-ano-min">
+                            <option value="">Ano mínimo</option>
+                        </select>
+                        <select name="Ano max" id="select-ano-max">
+                            <option value="">Ano máximo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="linha"></div> <!-- Linha -->
+                <div class="div-filtro-title">
+                    <h2>Cor</h2>
+                    <div class="filtro-cor-container">
+                        <div class="filtro-cor-header">
+                            <span>Selecione as cores</span>
+                            <i class="fa-solid fa-chevron-down" style="color: #757575;"></i>
+                        </div>
+                        <div class="filtro-cor-options">
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-preto" name="cor-preto">
+                                <label for="cor-preto">Preto</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-branco" name="cor-branco">
+                                <label for="cor-branco">Branco</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-prata" name="cor-prata">
+                                <label for="cor-prata">Prata</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-vermelho" name="cor-vermelho">
+                                <label for="cor-vermelho">Vermelho</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-azul" name="cor-azul">
+                                <label for="cor-azul">Azul</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-cinza" name="cor-cinza">
+                                <label for="cor-cinza">Cinza</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-verde" name="cor-verde">
+                                <label for="cor-verde">Verde</label>
+                            </div>
+                            <div class="option-item">
+                                <input type="checkbox" id="cor-amarelo" name="cor-amarelo">
+                                <label for="cor-amarelo">Amarelo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="sec-veiculos">
+            <div class="div-qts-anuncios">
+                <p><span id="qnt-veiculos">0</span> anúncios encontrados</p>
+                <button id="btn-filtro">
+                    Filtrar
+                    <i class="fa-solid fa-sliders"></i>
+                </button>
+            </div>
+            <!-- Div Listar Veículos -->
+            <div class="div-pai-cards" id="div-veiculos">
+                <div class="card-loading"></div>
+                <div class="card-loading"></div>
+                <div class="card-loading"></div>
+                <div class="card-loading"></div>
+                <div class="card-loading"></div>
+                <div class="card-loading"></div>
+            </div>
+        </section>
+
+        <div id="divAlertMessage"></div>
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modais -->
+    <!-- Talvez os modais não serão necessários para todas as páginas -->
+    <div id="modal-nav-veiculos">
+        <div id="pagina-veiculo-carro">
+            <i class="fa-solid fa-car"></i>
+            <p>Comprar carros</p>
+        </div>
+        <div id="pagina-veiculo-moto">
+            <i class="fa-solid fa-motorcycle"></i>
+            <p>Comprar motos</p>
+        </div>
+    </div>
+
+    <div id="modal-login">
+        <p class="title">Faça login para uma experiência
+            ainda melhor! ;D</p>
+        <a href="login.html" class="btn-login">Fazer login</a>
+        <p class="subtitle">Não tem uma conta? <a href="cadastro.html">Criar conta</a></p>
+        <p id="closeModalLogin">&times;</p>
+    </div>
+</body>
+
+
+</html>

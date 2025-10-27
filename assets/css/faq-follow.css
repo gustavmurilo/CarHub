@@ -1,0 +1,611 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --roxo: #6C1DE9;
+    --hover-roxo: #6C1DE9;
+    --cor-bg: #ECEDF2;
+    --cor-bg-sec: #FFFFFF;
+    --cor-texto: #262627;
+    --cor-texto-apagado: #AEAEBA;
+    --cor-titles: #696977;
+    --roxo-claro: #ECE1FE;
+}
+
+.card-ajuda2{
+    position: relative;
+    width: 188px;
+    height: 170px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.3s;
+}
+button.owl-prev{
+  position: relative;
+  top: -132px;
+  right: 470px;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}
+
+.i-next{
+  position: relative;
+  top: -160px;
+  left: -40px;
+  font-size: 20px;
+  color: #696977;
+  transition: 0.3s;
+}
+
+.i-prev{
+  position: relative;
+  top: -160px;
+  right: -40px;
+  font-size: 20px;
+  color: #696977;
+}
+
+.i-prev:hover{
+  color:#6C1DE9;
+}
+
+button.owl-next{
+  position: relative;
+  top: -132px;
+  left: 470px;
+  width: 30px;
+  height: 30px;
+  background: 0 0;
+}
+
+button.owl-prev:hover{
+  background-color: transparent!important;
+  color: transparent!important;
+}
+
+button.owl-next:hover{
+  background-color: transparent!important;
+  color: transparent!important;  
+}
+
+
+button.owl-next span{
+  font-size: 0px;
+}
+
+button.owl-prev span{
+  font-size: 0px;
+}
+
+.card-ajuda2 p{
+  color: #696977;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.card-ajuda-front2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s
+}
+.container-card-ajuda2 {
+  max-width: 917px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.i-ajuda2 {
+  font-size: 40px;
+  color: #696977;
+  transition: 0.3s
+}
+
+.card-ajuda2:hover .i-ajuda2{
+  color: #6C1DE9;
+}
+
+.card-ajuda2:hover p {
+  color: #000000;
+}
+
+.card-ajuda2.ativo-ajuda2 .i-ajuda2 {
+  color: #6C1DE9;
+}
+
+.card-ajuda2.ativo-ajuda2 p {
+  color: #000000;
+}
+
+
+.div-fluxo-filtro {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.div-fluxo-filtro a {
+  font-size: 12px;
+  color: #aeaeba  
+}
+
+.div-fluxo-filtro span {
+  font-size: 12px;
+  color: #aeaeba;
+  cursor: auto; 
+}
+
+.div-fluxo-filtro i {
+  font-size: 8px;
+  color: #6C1DE9  
+}
+
+.pai-secs{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.sections{
+  padding-left: 60px;
+  max-width: 917px;
+}
+
+.title-aside{
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.li-aside{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.li-aside h4:hover{
+  color: #6C1DE9;
+}
+
+.ul-aside{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ul2-aside {
+  display: none;
+}
+
+
+.ul2-aside.aberto {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.li2-aside{
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+}
+
+.li2-aside:hover{
+  text-decoration: underline;
+  color: #6C1DE9;
+}
+
+.strong-href{
+  color: #6C1DE9;
+  cursor: pointer;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  margin-right: 8px;
+}
+
+.title-aside.ativo .arrow {
+  color: #6C1DE9;
+}
+
+.aside{
+  display: none;
+}
+
+/* Quando o item está aberto */
+.title-aside.ativo .arrow {
+  transform: rotate(90deg);
+} 
+
+.title-aside.ativo {
+  color: #6C1DE9;
+}
+
+.li2-aside.ativo-li2 {
+  color: #6C1DE9; 
+}
+
+
+.div-inicial , .div-cadastro, .div-login, .div-esquecisenha{
+  display: none;
+}
+
+#link_inicial{
+  display: flex;
+  flex-direction: column;
+}
+
+#link_esquecisenha, #link_login , #link_cadastro{
+  display: none;
+  flex-direction: column  ;
+} 
+
+
+
+.i-svgs{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.i-centralizar{
+  display: flex; flex-direction: row; align-items: center; justify-content: center;
+}
+
+.i-imgs{
+  width: 600px;
+  height: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border: 10px solid #000000;
+  border-radius: 25px;
+}
+.div-sections1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #6C1DE9;
+  border-radius: 15px;
+}
+
+.sections-title{
+  font-size: 24px;
+}
+
+.div-sections1-img{
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.div-sections1-img:hover{
+  scale: 1.02;
+}
+
+
+
+/* Fale conosco CSS: */
+.form-contato-compacto {
+    max-width: 915px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-col {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-contato-compacto label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-contato-compacto input,
+.form-contato-compacto select,
+.form-contato-compacto textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-contato-compacto input:focus,
+.form-contato-compacto select:focus,
+.form-contato-compacto textarea:focus {
+    border: 1px solid var(--roxo);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--roxo)
+}
+
+.input-help {
+    display: block;
+    color: #666;
+    font-size: 12px;
+    margin-top: 3px;
+    font-style: italic;
+}
+
+.drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.drop-zone.dragover {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.drop-zone-content i {
+    font-size: 32px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.drop-zone-content p {
+    color: #666;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.btn-select-file {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-select-file:hover {
+    background: #e9ecef;
+}
+
+.file-list {
+    margin-top: 10px;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.file-remove {
+    color: #666;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.file-name{
+  font-size: 12px;
+}
+
+.btn-enviar {
+    background: var(--roxo);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-enviar:hover {
+    background: var(--hover-roxo);
+}
+
+/* Fim Fale conosco CSS */
+
+/* Container dos mascotes */
+.mascote-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+.mascote-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Balões de diálogo */
+.balao-dialogo {
+    position: absolute;
+    bottom: 120%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.mascote-wrapper:hover .balao-dialogo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.balao-conteudo {
+    background: white;
+    border-radius: 15px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 2px solid;
+    position: relative;
+    min-width: 200px;
+    max-width: 280px;
+    animation: fadeInText 0.5s ease;
+}
+
+/* Animação para mudança de texto */
+@keyframes fadeInText {
+    0% { opacity: 0.7; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.balao-texto.changing {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+/* Personalização por mascote */
+.balao-leo .balao-conteudo {
+    border-color: #00d1ff;
+    background: linear-gradient(135deg, #fff 0%, #fff8f5 100%);
+}
+
+.balao-luna .balao-conteudo {
+    border-color: #ff60dc;
+    background: linear-gradient(135deg, #fff 0%, #f8f5ff 100%);
+}
+
+/* Cauda do balão */
+.balao-cauda {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid;
+}
+
+.balao-leo .balao-cauda {
+    border-top-color: #00d1ff;
+}
+
+.balao-luna .balao-cauda {
+    border-top-color: #ff60dc;
+}
+
+/* Texto dos balões */
+.balao-texto {
+    font-size: 13px !important;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    color: #333;
+    transition: opacity 0.3s ease;
+}
+
+.balao-leo .balao-texto {
+    color: #00d1ff;
+}
+
+.balao-luna .balao-texto {
+    color: #ff60dc;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .mascote-container {
+        gap: 15px;
+    }
+    
+    .balao-conteudo {
+        min-width: 150px;
+        max-width: 200px;
+        padding: 10px 12px;
+    }
+    
+    .balao-texto {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .balao-conteudo {
+        min-width: 120px;
+        max-width: 160px;
+        padding: 8px 10px;
+    }
+    
+    .balao-texto {
+        font-size: 11px !important;
+    }
+}
+
+
+
+@media (max-width: 425px){
+  .card-ajuda2{
+    width: 128px;
+    height: 110px;
+  } 
+
+  .i-ajuda{
+    font-size: 35px;
+  }
+
+  .container-card-ajuda2 {
+    max-width: 280px;
+  }
+
+}

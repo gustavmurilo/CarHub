@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/perfil.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <link rel="icon" id="link_icon_navegador">
+    <title id="title-pagina"> - Perfil</title>
+    <!-- TERMINAR ( OLHAR O FIGMA) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- JS do NAV específico dessa página -->
+    <script src="assets/js/nav-perfil-adm.js" defer></script>
+    <!-- Arquivo JS padrão para todas as páginas de perfil -->
+    <script src="assets/js/perfil-api.js" defer></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" id="aDivLogo">
+            <div class="div-logo-title">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+                <h1>Minha Garagem</h1>
+            </div>
+        </a>
+
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+
+        <div class="container-perfil" id="barra-lateral">
+            <div class="perfil-usuario">
+                <i class="fa-solid fa-circle-user"></i>
+                <h2 id="nomeNav"></h2>
+                <p id="emailNav"></p>
+            </div>
+            <nav>
+                <a href="veiculos.html"><i class="fa-solid fa-magnifying-glass"></i>Buscar Anúncio</a>
+                <a id="link_minhaConta" class="selecionado"><i class="fa-solid fa-user"></i>Minha Conta</a>
+                <a id="link_editUser"><i class="fa-solid fa-user-pen"></i>Editar usuários</a>
+                <a id="link_servicos"><i class="fa-solid fa-wrench"></i>Serviços</a>
+                <a id="link_reservas"><i class="fa-solid fa-calendar-days"></i>Reservas</a>
+                <a id="link_relatorios"><i class="fas fa-file-alt"></i>Relatórios</a>
+                <div class="submenu-relatorios" style="display: none;">
+                    <a class="sub-relatorio" id="movimentacao">Movimentações</a>
+                    <a class="sub-relatorio" id="parcelamentos">Parcelamentos</a>
+                    <a class="sub-relatorio" id="carros">Carros</a>
+                    <a class="sub-relatorio" id="motos">Motos</a>
+                    <a class="sub-relatorio" id="clientes">Clientes</a>
+                    <a class="sub-relatorio" id="manutencao">Manutenções</a>
+                </div>
+                <a href="adicionar-veiculo.html"><i class="fa-solid fa-car"></i>Adicionar Veiculo</a>
+                <a id="link_config"><i class="fa-solid fa-gear"></i>Configurações</a>
+                <a id="deslogarConta"><i class="fa-solid fa-right-to-bracket"></i>Sair</a>
+            </nav>
+            <p id="fecharBarraLateral">&times;</p>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+    <main>
+        <section class="container" id="conteudo">
+            <!-- Div Minha Conta -->
+            <div class="container-info-input" id="minha-conta">
+                <div class="informacoes-input">
+                    <h3>Campos com asteriscos ( * ) são obrigatórios </h3>
+                    <form id="formEditarUsuario">
+                        <div class="container-input">
+                            <label class="text" for="input">E-mail*</label>
+                            <input class="input" required name="email" type="email" id="email_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">Nome Completo*</label>
+                            <input class="input" required name="nome_completo" type="text" id="nome_completo_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text date" for="input">Data de nascimento*</label>
+                            <input class="input" required name="data_nascimento" type="date"
+                                id="data_nascimento_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">CPF ou CNPJ*</label>
+                            <input class="input" required name="cpf_cnpj" type="text" id="cpf_cnpj_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">Telefone*</label>
+                            <input class="input" required name="telefone" type="tel" id="telefone_input" />
+                        </div>
+                        <h3>Atualizar senha (opcional)</h3>
+                        <div class="container-input">
+                            <label class="text" for="input" id="label-senha-atual">Senha atual</label>
+                            <input class="input" name="senha_hash" type="password" id="input-senha-atual" />
+                            <i class="fa-solid fa-eye" id="mostrarSenhaAtual"></i>
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input" id="label-senha-nova">Senha nova</label>
+                            <input class="input" name="senha_nova" type="password" id="input-senha-nova" />
+                            <i class="fa-solid fa-eye" id="mostrarSenhaNova"></i>
+                        </div>
+                        <button type="submit">Atualizar os dados</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Div Edit User -->
+            <div class="container-edit-user" id="editUser">
+
+                <div class="filtro-users-wrapper">
+                    <div class="search-box">
+                        <input type="text" id="search-user-input" placeholder="Buscar usuário">
+                        <i class="fa-solid fa-search"></i>
+                    </div>
+
+                    <div class="status-box">
+                        <select id="status-select">
+                            <option value="">Situação</option>
+                            <option value="1">Ativo</option>
+                            <option value="0">Inativo</option>
+                        </select>
+                    </div>
+
+                    <div class="type-box">
+                        <select id="type-select">
+                            <option value="">Tipo</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Vendedor</option>
+                            <option value="3">Cliente</option>
+                        </select>
+                    </div>
+
+                    <button class="cad-user" id="btn-modal-cad-user">Cadastrar usuário <i
+                            class="fa fa-user-plus"></i></button>
+                </div>
+                <div class="table-container">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th><i class="fa-solid fa-user"></i></th>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Telefone</th>
+                                <th>Ativo</th>
+                                <th>Tipo usuário</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-users"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Div Relatórios - Movimentações -->
+            <div class="container-relatorios" id="relatorio-movimentacao">
+
+                <div class="container-dashboard">
+
+                    <h1 class="texto-principal">Dashboard</h1>
+
+                    <div class="div-filtro-mov">
+                        <select id="select-dia-mov"></select>
+                        <select id="select-mes-mov"></select>
+                        <select id="select-ano-mov"></select>
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div class="balance-card">
+                        <div class="balance-title">Saldo</div>
+                        <div class="balance-amount" id="saldo-valor">0,00</div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="transactions-card">
+                            <div>
+                                <div class="transaction-header">
+                                    <div class="transaction-title">Receitas</div>
+                                    <div class="tooltip div-tip-receita">
+                                        <i class="fa-solid fa-plus" id="mov-receitas"></i>
+                                        <span class="tooltip-text tip-receita">Adicionar receita</span>
+                                    </div>
+                                </div>
+                                <p class="transaction-amount" id="receita-valor">R$ 0,00</p>
+                            </div>
+
+                            <div class="transaction-divider"></div>
+
+                            <div>
+                                <div class="transaction-header">
+                                    <div class="transaction-title">Despesas</div>
+                                    <div class="tooltip div-tip-despesa">
+                                        <i class="fa-solid fa-plus" id="mov-despesas"></i>
+                                        <span class="tooltip-text tip-despesa">Adicionar despesa</span>
+                                    </div>
+                                </div>
+                                <p class="transaction-amount" id="despesa-valor">R$ 0,00</p>
+                            </div>
+                        </div>
+                        <div class="charts-card" id="div-movimentacoes"></div>
+                    </div>
+                    <div class="div-button-mov">
+                        <button id="abrir-options-pdf">
+                            Visualizar/Gerar PDF
+                            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                            <i class="fa-solid fa-chevron-up" id="chevron-bandeja-relatorio"></i>
+                        </button>
+                        <div class="div-option-relatorio" id="div-option-relatorios">
+                            <div class="option-relatorio" id="pdf-movimentacao"><i class="fa-solid fa-dollar-sign"></i>
+                                Movimentações</div>
+                            <div class="option-relatorio" id="pdf-clientes-compras"><i
+                                    class="fa-solid fa-users"></i>Clientes e compras</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Div Relatórios - Carros -->
+            <div class="container-relatorios" id="relatorio-carros">
+                <div class="container-branco">
+                    <h3 class="title-conbranco">Filtro - Carros</h3>
+                    <div class="div-input">
+                        <label for="select-marca-carro">Marca*</label>
+                        <select id="select-marca-carro" name="marca">
+                            <option value="Todos">Todos</option>
+                            <option value="Acura">Acura</option>
+                            <option value="Alfa Romeo">Alfa Romeo</option>
+                            <option value="Aston Martin">Aston Martin</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Bentley">Bentley</option>
+                            <option value="BMW">BMW</option>
+                            <option value="BYD">BYD</option>
+                            <option value="Bugatti">Bugatti</option>
+                            <option value="Cadillac">Cadillac</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="Chery">Chery</option>
+                            <option value="Citroën">Citroën</option>
+                            <option value="Dodge">Dodge</option>
+                            <option value="Ferrari">Ferrari</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Ford">Ford</option>
+                            <option value="GMC">GMC</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Infiniti">Infiniti</option>
+                            <option value="JAC">JAC</option>
+                            <option value="Jeep">Jeep</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Land Rover">Land Rover</option>
+                            <option value="Lexus">Lexus</option>
+                            <option value="Maserati">Maserati</option>
+                            <option value="McLaren">McLaren</option>
+                            <option value="Mazda">Mazda</option>
+                            <option value="Mini">Mini</option>
+                            <option value="Mitsubishi">Mitsubishi</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="Porsche">Porsche</option>
+                            <option value="Ram">Ram</option>
+                            <option value="Renault">Renault</option>
+                            <option value="Rolls-Royce">Rolls-Royce</option>
+                            <option value="Saab">Saab</option>
+                            <option value="Smart">Smart</option>
+                            <option value="Subaru">Subaru</option>
+                            <option value="Suzuki">Suzuki</option>
+                            <option value="Tesla">Tesla</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Volkswagen">Volkswagen</option>
+                            <option value="Volvo">Volvo</option>
+                        </select>
+                    </div>
+                    <div class="div-input-dupla">
+                        <div class="div-input">
+                            <label for="ano-fabricacao-carro">Ano fabricação*</label>
+                            <select name="ano-fabricacao-carro" id="ano-fabricacao-carro">
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="div-input">
+                            <label for="ano-modelo-carro">Ano modelo*</label>
+                            <select name="ano-modelo-carro" id="ano-modelo-carro" disabled>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="div-input">
+                        <label for="status-do-carro">Status do Veículo*</label>
+                        <select name="status-do-carro" id="status-do-carro">
+                            <option value="Todos">Todos</option>
+                            <option value="Vendido">Vendido</option>
+                            <option value="Disponível">Disponível</option>
+                        </select>
+                    </div>
+
+                    <a class="relatorios-btn" id="pdf-carros">
+                        <h3>Visualizar/Gerar PDF</h3>
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div Relatórios - Motos -->
+            <div class="container-relatorios" id="relatorio-motos">
+                <div class="container-branco">
+                    <h3 class="title-conbranco">Filtro - Motos</h3>
+                    <div class="div-input">
+                        <label for="select-marca-moto">Marca*</label>
+                        <select id="select-marca-moto" name="marca">
+                            <option value="Todos">Todos</option>
+                            <option value="Aprilia">Aprilia</option>
+                            <option value="Benelli">Benelli</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Bultaco">Bultaco</option>
+                            <option value="Cagiva">Cagiva</option>
+                            <option value="CFMoto">CFMoto</option>
+                            <option value="Ducati">Ducati</option>
+                            <option value="Harley-Davidson">Harley-Davidson</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Husqvarna">Husqvarna</option>
+                            <option value="Indian Motorcycle">Indian Motorcycle</option>
+                            <option value="Kawasaki">Kawasaki</option>
+                            <option value="KTM">KTM</option>
+                            <option value="Kymco">Kymco</option>
+                            <option value="MV Agusta">MV Agusta</option>
+                            <option value="Royal Enfield">Royal Enfield</option>
+                            <option value="Suzuki">Suzuki</option>
+                            <option value="Triumph">Triumph</option>
+                            <option value="Yamaha">Yamaha</option>
+                            <option value="Zero Motorcycles">Zero Motorcycles</option>
+                        </select>
+                    </div>
+                    <div class="div-input-dupla">
+                        <div class="div-input">
+                            <label for="ano-fabricacao-moto">Ano fabricação*</label>
+                            <select name="ano-fabricacao-moto" id="ano-fabricacao-moto">
+                                <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="div-input">
+                            <label for="ano-modelo-moto">Ano modelo*</label>
+                            <select name="ano-modelo-moto" id="ano-modelo-moto" disabled>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="div-input">
+                        <label for="status-da-moto">Status do Veículo*</label>
+                        <select name="status-da-moto" id="status-da-moto">
+                            <option value="Todos">Todos</option>
+                            <option value="Vendido">Vendido</option>
+                            <option value="Disponível">Disponível</option>
+                        </select>
+                    </div>
+
+                    <a class="relatorios-btn" id="pdf-motos">
+                        <h3>Visualizar/Gerar PDF</h3>
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div Relatórios - Clientes -->
+            <div class="container-relatorios" id="relatorio-clientes">
+                <div class="container-branco">
+                    <h3 class="title-conbranco">Filtro - Clientes</h3>
+                    <div class="div-input-dupla">
+                        <div class="div-input">
+                            <label for="nome-cliente">Nome</label>
+                            <input id="nome-cliente" type="text" />
+                        </div>
+                        <div class="div-input">
+                            <label for="cpf-cnpj-cliente">CPF/CNPJ</label>
+                            <input id="cpf-cnpj-cliente" type="text" />
+                        </div>
+                    </div>
+                    <div class="div-input">
+                        <label for="status-cliente" class="active">Status*</label>
+                        <select id="status-cliente" name="status-cliente">
+                            <option value="Todos">Todos</option>
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                        </select>
+                    </div>
+                    <div class="inputs-DMA">
+                        <div class="div-input">
+                            <label for="dia-cliente">Dia</label>
+                            <input id="dia-cliente" maxlength="2" type="text" />
+                        </div>
+                        <div class="div-input">
+                            <label for="mes-cliente">Mês</label>
+                            <input id="mes-cliente" maxlength="2" type="text" />
+                        </div>
+                        <div class="div-input">
+                            <label for="ano-cliente">Ano</label>
+                            <input id="ano-cliente" maxlength="4" type="text" />
+                        </div>
+                    </div>
+                    <a class="relatorios-btn" id="pdf-clientes">
+                        <h3>Visualizar/Gerar PDF</h3>
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div Relatórios - Manutenções -->
+            <div class="container-relatorios" id="relatorio-manutencao">
+                <div class="container-branco">
+                    <h3 class="title-conbranco">Filtro - Manutenções</h3>
+                    <div class="div-input">
+                        <label for="tipo-veic-manutencao" class="active">Tipo de veículo*</label>
+                        <select id="tipo-veic-manutencao" name="tipo-veic-manutencao">
+                            <option value="Ambos">Ambos</option>
+                            <option value="Carros">Carros</option>
+                            <option value="Motos">Motos</option>
+                        </select>
+                    </div>
+                    <div class="inputs-DMA">
+                        <div class="div-input">
+                            <label for="dia-manutencao">Dia</label>
+                            <input id="dia-manutencao" maxlength="2" type="text" />
+                        </div>
+                        <div class="div-input">
+                            <label for="mes-manutencao">Mês</label>
+                            <input id="mes-manutencao" maxlength="2" type="text" />
+                        </div>
+                        <div class="div-input">
+                            <label for="ano-manutencao">Ano</label>
+                            <input id="ano-manutencao" maxlength="4" type="text" />
+                        </div>
+                    </div>
+                    <a class="relatorios-btn" id="pdf-manutencao">
+                        <h3>Visualizar/Gerar PDF</h3>
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div Relatórios - Parcelamentos -->
+            <div class="container-relatorios parcelamento" id="relatorio-parcelamentos">
+                <h3 class="title-conbranco">Parcelamentos</h3>
+                <div class="div-blocos">
+                    <div class="bloco-info total">
+                        <p class="legenda total">Total</p>
+                        <p class="numero total" id="financ-total">~</p>
+                    </div>
+
+                    <div class="bloco-info">
+                        <p class="legenda">Em andamento</p>
+                        <p class="numero" id="financ-em-andamento">~</p>
+                    </div>
+
+                    <div class="bloco-info">
+                        <p class="legenda">Concluídos</p>
+                        <p class="numero" id="financ-concluidos">~</p>
+                    </div>
+                </div>
+
+                <div class="div-input-gerar-relatorio">
+                    <div class="div-input-filtro">
+                        <input type="text" placeholder="Busque pelo cliente, marca, modelo ou placa do veículo"
+                            id="input-filtro-parc" maxlength="7">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <a class="relatorios-btn" id="pdf-parcelamento">
+                        <h3>Visualizar/Gerar PDF</h3>
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Div serviços -->
+            <div id="servicos" style="display: none;">
+                <div class="modal-header">
+                    <p id="titleManutencao">Serviços</p>
+                </div>
+
+                <div class="div-info">
+                    <input type="hidden" id="input-id-manutencao">
+
+                    <div class="div-input-obs">
+                        <label for="input-obs">Descrição</label>
+                        <input class="input" name="input-obs" id="input-obs" type="text" placeholder="Nome do serviço"
+                            required />
+                    </div>
+                    <div class="div-input-valor">
+                        <label for="input-valor">Valor</label>
+                        <input class="input" name="input-valor" id="input-valor" type="text" placeholder="R$999,99"
+                            required />
+                    </div>
+                </div>
+
+                <div class="div-buttons">
+                    <button class="button-add" id="add-servico">Adicionar serviço</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th class="icon-col"><i class="fa-solid fa-screwdriver-wrench"></i></th>
+                                <th>Serviço</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-servicos"></tbody>
+                    </table>
+                </div>
+
+                <!-- Indicador de carregamento -->
+                <div class="bg-carregamento-servicos" style="display: none;">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+
+            <!-- Div de Reservas -->
+            <div id="reservas">
+                <div class="div-carrossel">
+                    <div class="conteudo" id="div-reservas"></div>
+                </div>
+            </div>
+
+            <!-- Div Configurações da Garagem -->
+            <div id="config">
+                <!-- Div Minha Conta -->
+                 <div class="seta-box" style="display: none;" id="config-ant">
+                    <i class="fa-solid fa-arrow-left setas"></i>
+                </div>
+
+                <div class="container-info-input garagem" id="div-config-1">
+                    <div class="informacoes-input garagem">
+                        <h3>Configurações da Garagem</h3>
+                        <form id="formConfigGaragem" class="garagem">
+                            <div class="container-input">
+                                <label class="text" for="primeiro-nome-input">Primeiro nome*</label>
+                                <input class="input" required name="primeiro-nome-input" type="text"
+                                    id="primeiro-nome-input" />
+                            </div>
+                            <div class="container-input">
+                                <label class="text" for="segundo-nome-input">Segundo nome*</label>
+                                <input class="input" required name="segundo-nome-input" type="text"
+                                    id="segundo-nome-input" />
+                            </div>
+                            <div class="container-input">
+                                <label class="text" for="razao-social-input">Razão social*</label>
+                                <input class="input" required name="razao-social-input" id="razao-social-input"
+                                    type="text" />
+                            </div>
+                            <div class="container-input">
+                                <label class="text" for="cnpj-input">CNPJ*</label>
+                                <input class="input" required name="cnpj-input" type="text" id="cnpj-input"
+                                    maxlength="18" />
+                            </div>
+                            <div class="container-input">
+                                <label class="text" for="chave-pix-input">Chave pix*</label>
+                                <input class="input" required name="chave-pix-input" type="text" id="chave-pix-input" />
+                            </div>
+                            <div class="div-container-cidade-estado">
+                                <div class="container-input estado">
+                                    <label class="text date" for="estado-input">Estado*</label>
+                                    <select class="input" required name="estado-input" id="estado-input"></select>
+                                </div>
+                                <div class="container-input">
+                                    <label class="text date" for="input">Cidade*</label>
+                                    <select class="input" required name="cidade-input" id="cidade-input"></select>
+                                </div>
+                            </div>
+                            <button type="submit">Salvar alterações</button>
+                        </form>
+                    </div>
+
+                    <div class="div-logo-cores">
+                        <div class="div-img-logo">
+                            <h3>Logo</h3>
+
+                            <!-- Input de upload de imagem -->
+                            <label for="upload-imagem" class="upload-label">
+                                <div class="img-preview"></div>
+                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                <div class="overlay-img"></div>
+                            </label>
+
+                            <!-- Altere o atributo name para "imagens" -->
+                            <input type="file" id="upload-imagem" accept=".jpg,.jpeg,.png" name="imagens" />
+
+                            <button id="editarLogo">Salvar logo</button>
+                        </div>
+
+                        <div class="div-cores">
+                            <h3 class="cores">Cores</h3>
+
+                            <div class="div-inputs-cores">
+                                <div class="div-input-cores">
+                                    <label for="color-princ">Cor principal:</label>
+                                    <input type="color" name="color-princ" id="color-princ">
+                                </div>
+
+                                <div class="div-input-cores">
+                                    <label for="color-fund-1">Cor de fundo 1:</label>
+                                    <input type="color" name="color-fund-1" id="color-fund-1">
+                                </div>
+
+                                <div class="div-input-cores">
+                                    <label for="color-fund-1">Cor de fundo 2:</label>
+                                    <input type="color" name="color-fund-2" id="color-fund-2">
+                                </div>
+
+                                <div class="div-input-cores">
+                                    <label for="color-texto">Cor texto:</label>
+                                    <input type="color" name="color-texto" id="color-texto">
+                                </div>
+                            </div>
+
+                            <button id="atualizarCores">Atualizar cores</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-info-input garagem footer" style="display: none;" id="div-config-2">
+                    <div class="informacoes-input garagem">
+
+                        <div class="div-img-banner">
+                            <h3>Alterar banner</h3>
+
+                            <!-- Input de upload de imagem -->
+                            <label for="upload-banner" class="upload-label banner">
+                                <div class="img-preview-banner"></div>
+                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                <div class="overlay-img"></div>
+                            </label>
+
+                            <!-- Altere o atributo name para "imagens" -->
+                            <input type="file" id="upload-banner" accept=".jpg,.jpeg,.png" name="imagens" />
+
+                            <button id="editarBanner">Salvar banner</button>
+                        </div>
+                        
+                        <form id="form-att-footer">
+                            <h3>Informações do rodapé</h3>
+                            <div class="container-input">
+                                <label class="text" for="telefone-input">Telefone*</label>
+                                <input class="input" required name="telefone-input" maxlength="11" type="text"
+                                    id="telefone-input" />
+                            </div>
+                            <div class="container-input">
+                                <label class="text" for="email-input">Email*</label>
+                                <input class="input" required name="email-input" type="text"
+                                    id="email-input" />
+                            </div>
+                            <button type="submit">Salvar alterações</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="seta-box" id="config-prox">
+                    <i class="fa-solid fa-arrow-right setas"></i>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Div Alert Message -->
+        <div id="divAlertMessage"></div>
+
+        <!-- Modal Editar Usuário -->
+        <form id="modal-editar-usuario">
+            <i class="fa-solid fa-xmark" id="close-modal-editar"></i>
+            <h3>Editar informações do usuário</h3>
+            <div class="div-input-modal">
+                <label for="nome-editar">Nome:</label>
+                <input type="text" name="nome-editar" id="nome-editar" required />
+            </div>
+            <div class="div-input-modal">
+                <label for="email-editar">Email:</label>
+                <input type="text" name="email-editar" id="email-editar" required />
+            </div>
+            <div class="div-input-modal">
+                <label for="telefone-editar">Telefone:</label>
+                <input type="text" name="telefone-editar" id="telefone-editar" />
+            </div>
+            <div class="div-input-modal">
+                <label for="ativo-editar">Ativo:</label>
+                <select name="ativo-editar" id="ativo-editar" required>
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
+                </select>
+            </div>
+            <div class="div-input-modal">
+                <label for="tipo-usuario-editar">Tipo Usuario:</label>
+                <select name="tipo-usuario-editar" id="tipo-usuario-editar" required>
+                    <option value="1">Administrador</option>
+                    <option value="2">Vendedor</option>
+                    <option value="3">Cliente</option>
+                </select>
+            </div>
+            <button type="submit">Salvar alterações</button>
+        </form>
+
+        <!-- Modal Add Movimentação -->
+        <form id="modal-mov" class="modal-system">
+            <i class="fa-solid fa-xmark" id="close-modal-mov"></i>
+            <h2 id="tilte-modal-add-mov"></h2>
+            <div class="div-input">
+                <label for="descricao-mov">Descrição</label>
+                <input type="text" name="descricao-mov" id="descricao-mov" required />
+            </div>
+            <div class="div-info">
+                <div class="div-input">
+                    <label for="data-mov" class="active">Data</label>
+                    <input type="date" name="data-mov" id="data-mov" required />
+                </div>
+                <div class="div-input">
+                    <label for="valor-mov">Valor</label>
+                    <input type="text" name="valor-mov" id="valor-mov" value="R$ 0,00" required />
+                </div>
+            </div>
+            <input type="hidden" id="tipo-mov">
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <!-- Modal editar serviço -->
+        <form id="formEditarServico">
+            <i class="fa-solid fa-arrow-left" id="fecharModalEditarServico"></i>
+            <p class="p-title">Editar serviço</p>
+            <!-- Div descrição serviço -->
+            <input type="hidden" name="id-editar-servico" id="id-editar-servico">
+            <div class="div-input">
+                <label for="descricao-editar-servico">Descrição</label>
+                <input name="descricao-editar-servico" id="descricao-editar-servico" type="text"></p>
+            </div>
+            <!-- Div valor serviço -->
+            <div class="div-input">
+                <label for="valor-editar-servico">Valor</label>
+                <input name="valor-editar-servico" id="valor-editar-servico" type="text" value="R$ 0,00" />
+            </div>
+            <button type="submit">Salvar alterações</button>
+            <button type="button" id="excluir-servico">Inativar</button>
+        </form>
+
+        <!-- Form Div Cadastrar User -->
+        <form class="container-login" id="formCadastroUsuario">
+            <i class="fa-solid fa-xmark" id="close-modal-cad-user"></i>
+            <h1 class="title">Cadastre um novo usuário</h1>
+            <div class="div-input">
+                <label for="input">Nome completo</label>
+                <input class="input" name="nome_completo" type="text" required />
+            </div>
+            <div class="div-input">
+                <label for="input">Email</label>
+                <input class="input" name="email" type="text" required />
+            </div>
+            <div class="div-input">
+                <label for="input">Senha</label>
+                <input name="senha_hash" type="password" id="input-senha" required />
+                <i class="fa-solid fa-eye" id="mostrarSenha"></i>
+            </div>
+            <div class="div-input">
+                <label for="input">Tipo de usuário</label>
+                <select name="tipo_user" id="select-tipo-user">
+                    <option value=""></option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Vendedor</option>
+                </select>
+            </div>
+            <div class="divButtonSubmit">
+                <button class="btn-acao" type="submit">Criar conta</button>
+            </div>
+        </form>
+
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome footer"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

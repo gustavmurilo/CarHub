@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/adicionar-veiculo.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+
+    <!-- Scripts das funções essenciais do Header -->
+    <script src="assets/js/header.js" defer></script>
+    <!-- CSS do Footer, Header e Responsivo de ambos  -->
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <title id="title-pagina"> - Adicionar veículo</title>
+    <link rel="icon" id="link_icon_navegador">
+
+    <script src="assets/js/add-veic.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo hidden">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+        <div id="barra-lateral">
+            <a href="index.html">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-veiculos"><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#footer">Contato</a></li>
+                    <li><a href="faq.html">Ajuda</a></li>
+                </ul>
+            </nav>
+            <a href="" id="aDivEntrar">
+                <div class="div-usuario" id="divEntrar">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p id="nomeUsuario">Entrar</p>
+                </div>
+            </a>
+            <p id="fecharBarraLateral">&times;</p>
+        </div>
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+    <main>
+        <form action="" id="form-add-veic">
+            <div class="container-branco">
+                <!-- Fase 1 -->
+                <div id="fase-1">
+                    <p class="titulo">Preencha a placa do veículo</p>
+                    <div class="placa">
+                        <div class="div-azul">
+                            <div class="logo-brazil"></div>
+                        </div>
+                        <input type="text" name="placa" id="placa" placeholder="ABC1D23" maxlength="7">
+                        <div class="linha"></div>
+                    </div>
+                    <div class="aviso">
+                        <i class="fa-solid fa-shield-halved escudo-aviso"></i>
+                        <p class="texto-aviso">Não vamos divulgar sua placa! Ela será usada apenas para completar seu
+                            anúncio e realizar verificações de segurança.</p>
+                    </div>
+                </div>
+
+                <!-- Fase 2 -->
+                <div id="fase-2">
+                    <p class="titulo2">Selecione o tipo de veículo</p>
+                    <div class="veiculo active" id="tipo-carro">
+                        <div class="icon-veiculo">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <p>Carro</p>
+                    </div>
+                    <div class="veiculo" id="tipo-moto">
+                        <div class="icon-veiculo">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <p>Moto</p>
+                    </div>
+                </div>
+
+                <!-- Fase 3 Carro -->
+                <div id="fase-3-carro">
+                    <p class="titulo3">Preencha os dados do veículo</p>
+                    <div class="pai-div-input">
+                        <div class="div-input">
+                            <label for="marca-carro">Marca*</label>
+                            <select id="marca-carro" name="marca-carro">
+                                <option value=""></option>
+                                <option value="Acura">Acura</option>
+                                <option value="Alfa Romeo">Alfa Romeo</option>
+                                <option value="Aston Martin">Aston Martin</option>
+                                <option value="Audi">Audi</option>
+                                <option value="Bentley">Bentley</option>
+                                <option value="BMW">BMW</option>
+                                <option value="BYD">BYD</option>
+                                <option value="Bugatti">Bugatti</option>
+                                <option value="Cadillac">Cadillac</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Chery">Chery</option>
+                                <option value="Citroën">Citroën</option>
+                                <option value="Dodge">Dodge</option>
+                                <option value="Ferrari">Ferrari</option>
+                                <option value="Fiat">Fiat</option>
+                                <option value="Ford">Ford</option>
+                                <option value="GMC">GMC</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Infiniti">Infiniti</option>
+                                <option value="JAC">JAC</option>
+                                <option value="Jeep">Jeep</option>
+                                <option value="Kia">Kia</option>
+                                <option value="Land Rover">Land Rover</option>
+                                <option value="Lexus">Lexus</option>
+                                <option value="Maserati">Maserati</option>
+                                <option value="McLaren">McLaren</option>
+                                <option value="Mazda">Mazda</option>
+                                <option value="Mini">Mini</option>
+                                <option value="Mitsubishi">Mitsubishi</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Peugeot">Peugeot</option>
+                                <option value="Porsche">Porsche</option>
+                                <option value="Renault">Renault</option>
+                                <option value="Rolls-Royce">Rolls-Royce</option>
+                                <option value="Saab">Saab</option>
+                                <option value="Smart">Smart</option>
+                                <option value="Subaru">Subaru</option>
+                                <option value="Shineray">Shineray</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="Tesla">Tesla</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Volvo">Volvo</option>
+                            </select>
+                        </div>
+
+                        <div class="div-input">
+                            <label for="modelo-carro">Modelo*</label>
+                            <input id="modelo-carro" name="modelo-carro" type="text" placeholder="" />
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="ano-fabricacao-carro">Ano de fabricação*</label>
+                                <select name="ano-fabricacao-carro" id="ano-fabricacao-carro">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="ano-modelo-carro">Ano do modelo*</label>
+                                <select name="ano-modelo-carro" id="ano-modelo-carro" disabled>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="div-input">
+                            <label for="versao-carro">Versão*</label>
+                            <input id="versao-carro" name="versao-carro" type="text" placeholder="" maxlength="38" />
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="cor-carro">Cor*</label>
+                                <select id="cor-carro" name="cor-carro">
+                                    <option value=""></option>
+                                    <option value="Branco">Branco</option>
+                                    <option value="Preto">Preto</option>
+                                    <option value="Prata">Prata</option>
+                                    <option value="Cinza">Cinza</option>
+                                    <option value="Vermelho">Vermelho</option>
+                                    <option value="Vermelho">Vermelho Escuro</option>
+                                    <option value="Azul">Azul</option>
+                                    <option value="Azul Marinho">Azul Escuro</option>
+                                    <option value="Verde Escuro">Verde</option>
+                                    <option value="Verde Escuro">Verde Escuro</option>
+                                    <option value="Marrom">Marrom</option>
+                                    <option value="Dourado">Dourado</option>
+                                    <option value="Laranja">Laranja</option>
+                                    <option value="Amarelo">Amarelo</option>
+                                    <option value="Roxo">Roxo</option>
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="renavam-carro">Renavam*</label>
+                                <input id="renavam-carro" name="renavam-carro" type="text" placeholder="" />
+                            </div>
+                        </div>
+
+                        <div class="radio-group">
+                            <label>Veículo licenciado?*</label>
+                            <label>
+                                <input type="radio" name="licenciado-carro" value="1" checked />
+                                <span>Sim</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="licenciado-carro" value="0" />
+                                <span>Não</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 3 Moto -->
+                <div id="fase-3-moto">
+                    <p class="titulo3">Preencha os dados do veículo</p>
+                    <div class="pai-div-input">
+                        <div class="div-input">
+                            <label for="marca-moto">Marca*</label>
+                            <select id="marca-moto" name="marca-moto">
+                                <option value=""></option>
+                                <option value="Aprilia">Aprilia</option>
+                                <option value="Benelli">Benelli</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Bultaco">Bultaco</option>
+                                <option value="Cagiva">Cagiva</option>
+                                <option value="CFMoto">CFMoto</option>
+                                <option value="Ducati">Ducati</option>
+                                <option value="Harley-Davidson">Harley-Davidson</option>
+                                <option value="Haojue">Haojue</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Husqvarna">Husqvarna</option>
+                                <option value="Indian Motorcycle">Indian Motorcycle</option>
+                                <option value="Kawasaki">Kawasaki</option>
+                                <option value="KTM">KTM</option>
+                                <option value="Kymco">Kymco</option>
+                                <option value="MV Agusta">MV Agusta</option>
+                                <option value="Royal Enfield">Royal Enfield</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="Triumph">Triumph</option>
+                                <option value="Yamaha">Yamaha</option>
+                                <option value="Zero Motorcycles">Zero Motorcycles</option>
+                            </select>
+                        </div>
+
+                        <div class="div-input">
+                            <label for="modelo-moto">Modelo*</label>
+                            <input id="modelo-moto" name="modelo-moto" type="text" placeholder="" />
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="ano-fabricacao-moto">Ano de fabricação*</label>
+                                <select name="ano-fabricacao-moto" id="ano-fabricacao-moto">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="ano-modelo-moto">Ano do modelo*</label>
+                                <select name="ano-modelo-moto" id="ano-modelo-moto" disabled>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="div-input">
+                            <label for="categoria-moto">Categoria*</label>
+                            <select id="categoria-moto" name="categoria-moto">
+                                <option value=""></option>
+                                <option value="Esportiva">Esportiva</option>
+                                <option value="Custom">Custom</option>
+                                <option value="Street">Street</option>
+                                <option value="Scooter">Scooter</option>
+                                <option value="Adventure">Adventure</option>
+                                <option value="Off-road">Off-road</option>
+                                <option value="Naked">Naked</option>
+                                <option value="Touring">Touring</option>
+                            </select>
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="cor-moto">Cor*</label>
+                                <select id="cor-moto" name="cor-moto">
+                                    <option value=""></option>
+                                    <option value="Branco">Branco</option>
+                                    <option value="Preto">Preto</option>
+                                    <option value="Prata">Prata</option>
+                                    <option value="Cinza">Cinza</option>
+                                    <option value="Vermelho">Vermelho</option>
+                                    <option value="Vermelho">Vermelho Escuro</option>
+                                    <option value="Azul">Azul</option>
+                                    <option value="Azul Marinho">Azul Escuro</option>
+                                    <option value="Verde Escuro">Verde</option>
+                                    <option value="Verde Escuro">Verde Escuro</option>
+                                    <option value="Marrom">Marrom</option>
+                                    <option value="Dourado">Dourado</option>
+                                    <option value="Laranja">Laranja</option>
+                                    <option value="Amarelo">Amarelo</option>
+                                    <option value="Roxo">Roxo</option>
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="renavam-moto">Renavam*</label>
+                                <input id="renavam-moto" name="renavam-moto" type="number" placeholder="" />
+                            </div>
+                        </div>
+
+                        <div class="radio-group">
+                            <p>Veículo licenciado?*</p>
+                            <label>
+                                <input type="radio" name="licenciado-moto" value="1" checked />
+                                <span>Sim</span>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="licenciado-moto" value="0" />
+                                <span>Não</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 4 Carro -->
+                <div id="fase-4-carro">
+                    <p class="titulo3">Complemente as informações do seu veículo</p>
+                    <div class="pai-div-input">
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="cambio-carro">Câmbio*</label>
+                                <select id="cambio-carro" name="cambio-carro">
+                                    <option value=""></option>
+                                    <option value="Câmbio Manual">Câmbio Manual</option>
+                                    <option value="Câmbio Automático">Câmbio Automático</option>
+                                    <option value="Câmbio Sequencial">Câmbio Sequencial</option>
+                                    <option value="Câmbio CVT (Transmissão Variável Contínua)">Câmbio CVT (Transmissão
+                                        Variável Contínua)</option>
+                                    <option value="Câmbio Dupla Embreagem">Câmbio Dupla Embreagem</option>
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="combustivel-carro">Combustível*</label>
+                                <select id="combustivel-carro" name="combustivel-carro">
+                                    <option value=""></option>
+                                    <option value="Álcool">Álcool</option>
+                                    <option value="Gasolina">Gasolina</option>
+                                    <option value="Flex">Flex</option>
+                                    <option value="Etanol">Etanol</option>
+                                    <option value="Diesel">Diesel</option>
+                                    <option value="GNV (Gás Natural Veicular)">GNV (Gás Natural Veicular)</option>
+                                    <option value="Elétrico">Elétrico</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="categoria-carro">Categoria*</label>
+                                <select id="categoria-carro" name="categoria-carro">
+                                    <option value=""></option>
+                                    <option value="SUV">SUV</option>
+                                    <option value="Sedã">Sedã</option>
+                                    <option value="Hatchback">Hatchback</option>
+                                    <option value="Picape">Picape</option>
+                                    <option value="Crossover">Crossover</option>
+                                    <option value="Minivan">Minivan</option>
+                                    <option value="Esportivo">Esportivo</option>
+                                    <option value="Luxo">Luxo</option>
+                                    <option value="Compacto">Compacto</option>
+                                    <option value="Elétrico">Elétrico</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="quilometragem-carro">Quilometragem*</label>
+                                <input id="quilometragem-carro" name="quilometragem-carro" type="text" placeholder="" />
+                            </div>
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="estado-carro">Estado*</label>
+                                <select id="estado-carro" name="estado-carro">
+                                    <option value=""></option>
+                                    <!-- Opções de estado podem ser adicionadas dinamicamente -->
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="cidade-carro">Cidade*</label>
+                                <select id="cidade-carro" name="cidade-carro" disabled>
+                                    <option value=""></option>
+                                    <!-- As opções de cidades podem ser carregadas dinamicamente -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="preco_c-carro">Preço de Compra*</label>
+                                <input id="preco_c-carro" name="preco_c-carro" type="text" placeholder="" />
+                            </div>
+
+                            <div class="div-input">
+                                <label for="preco_v-carro">Preço de Venda*</label>
+                                <input id="preco_v-carro" name="preco_v-carro" type="text" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 4 Moto -->
+                <div id="fase-4-moto">
+                    <p class="titulo3">Complemente as informações do seu veículo</p>
+                    <div class="pai-div-input">
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="marchas-moto">Marchas*</label>
+                                <select id="marchas-moto" name="marchas-moto">
+                                    <option value=""></option>
+                                    <option value="Automático">Automático</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="partida-moto">Partida*</label>
+                                <select id="partida-moto" name="partida-moto">
+                                    <option value=""></option>
+                                    <option value="Elétrica">Elétrica</option>
+                                    <option value="Pedal">Pedal</option>
+                                    <option value="Mista (Elétrica + Pedal)">Mista (Elétrica + Pedal)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="tipo-motor-moto">Tipo de motor*</label>
+                                <input id="tipo-motor-moto" name="tipo-motor-moto" type="text" />
+                            </div>
+                            <div class="div-input">
+                                <label for="cilindradas-moto">Cilindradas*</label>
+                                <select id="cilindradas-moto" name="cilindradas-moto">
+                                    <option value=""></option>
+                                    <option value="50">50 cc</option>
+                                    <option value="110">110 cc</option>
+                                    <option value="125">125 cc</option>
+                                    <option value="150">150 cc</option>
+                                    <option value="160">160 cc</option>
+                                    <option value="180">180 cc</option>
+                                    <option value="200">200 cc</option>
+                                    <option value="250">250 cc</option>
+                                    <option value="300">300 cc</option>
+                                    <option value="350">350 cc</option>
+                                    <option value="400">400 cc</option>
+                                    <option value="450">450 cc</option>
+                                    <option value="500">500 cc</option>
+                                    <option value="600">600 cc</option>
+                                    <option value="650">650 cc</option>
+                                    <option value="700">700 cc</option>
+                                    <option value="750">750 cc</option>
+                                    <option value="800">800 cc</option>
+                                    <option value="900">900 cc</option>
+                                    <option value="1000">1000 cc</option>
+                                    <option value="1100">1100 cc</option>
+                                    <option value="1200">1200 cc</option>
+                                    <option value="1300">1300 cc</option>
+                                    <option value="1500">1500 cc</option>
+                                    <option value="1800">1800 cc</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="freio-moto">Freio dianteiro / traseiro*</label>
+                                <select id="freio-moto" name="freio-moto">
+                                    <option value=""></option>
+                                    <option value="Tambor / Tambor">Tambor / Tambor</option>
+                                    <option value="Tambor / Disco">Tambor / Disco</option>
+                                    <option value="Disco / Tambor">Disco / Tambor</option>
+                                    <option value="Disco / Disco">Disco / Disco</option>
+                                    <option value="ABS / Tambor">ABS / Tambor</option>
+                                    <option value="ABS / Disco">ABS / Disco</option>
+                                    <option value="Disco ventilado / Disco">Disco ventilado / Disco</option>
+                                    <option value="Disco ventilado / Tambor">Disco ventilado / Tambor</option>
+                                    <option value="Cerâmico / Disco">Cerâmico / Disco</option>
+                                    <option value="CBS / Tambor">CBS / Tambor</option>
+                                    <option value="CBS / Disco">CBS / Disco</option>
+                                    <option value="ABS / ABS">ABS / ABS</option>
+                                </select>
+                            </div>
+                            <div class="div-input">
+                                <label for="refrigeracao-moto">Refrigeração*</label>
+                                <select id="refrigeracao-moto" name="refrigeracao-moto">
+                                    <option value=""></option>
+                                    <option value="Ar">Ar</option>
+                                    <option value="Óleo">Óleo</option>
+                                    <option value="Líquida">Líquida</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="estado-moto">Estado*</label>
+                                <select id="estado-moto" name="estado-moto">
+                                    <option value=""></option>
+                                    <!-- Opções de estado podem ser adicionadas dinamicamente -->
+                                </select>
+                            </div>
+
+                            <div class="div-input">
+                                <label for="cidade-moto">Cidade*</label>
+                                <select id="cidade-moto" name="cidade-moto" disabled>
+                                    <option value=""></option>
+                                    <!-- As opções de cidades podem ser carregadas dinamicamente -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 5 Moto -->
+                <div id="fase-5-moto">
+                    <p class="titulo3">Complemente as informações do seu veículo</p>
+                    <div class="pai-div-input">
+                        <div class="div-input">
+                            <label for="alimentacao-moto">Alimentação*</label>
+                            <select id="alimentacao-moto" name="alimentacao-moto">
+                                <option value=""></option>
+                                <option value="Carburador">Carburador</option>
+                                <option value="Injeção Eletrônica">Injeção Eletrônica</option>
+                            </select>
+                        </div>
+
+                        <div class="div-input">
+                            <label for="quilometragem-moto">Quilometragem*</label>
+                            <input id="quilometragem-moto" name="quilometragem-moto" type="text" placeholder="" />
+                        </div>
+
+                        <div class="container-2labels">
+                            <div class="div-input">
+                                <label for="preco_c-moto">Preço de Compra*</label>
+                                <input id="preco_c-moto" name="preco_c-moto" type="text" placeholder="" />
+                            </div>
+
+                            <div class="div-input">
+                                <label for="preco_v-moto">Preço de Venda*</label>
+                                <input id="preco_v-moto" name="preco_v-moto" type="text" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 5 -->
+                <div id="fase-5">
+                    <p class="titulo2">Por fim, insira as imagens do veículo</p>
+                    <p class="subtitulo">Insira no mínimo 3 imagens</p>
+
+                    <!-- Input de upload de imagem -->
+                    <label for="upload-imagem" class="upload-label">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                    </label>
+                    <!-- Altere o atributo name para "imagens" -->
+                    <input type="file" id="upload-imagem" accept=".jpg,.jpeg,.png" name="imagens" multiple />
+
+                    <!-- Container onde as imagens serão exibidas -->
+                    <div class="div-preview-container-pai">
+                        <div id="preview-container"></div>
+                    </div>
+                </div>
+
+                <!-- Botões voltar e continuar -->
+                <button class="voltar" type="button" id="btn-voltar"><i
+                        class="fa-solid fa-arrow-left"></i>Voltar</button>
+                <button type="button" class="continuar" id="btn-continuar">
+                    <p>Continuar</p>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </form>
+
+        <div id="divAlertMessage"></div>
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal veículos do nav -->
+    <div id="modal-nav-veiculos">
+        <div id="pagina-veiculo-carro">
+            <i class="fa-solid fa-car"></i>
+            <p>Comprar carros</p>
+        </div>
+        <div id="pagina-veiculo-moto">
+            <i class="fa-solid fa-motorcycle"></i>
+            <p>Comprar motos</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,395 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins", serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --roxo: #6C1DE9;
+    --hover-roxo: #6C1DE9;
+    --cor-bg: #ECEDF2;
+    --cor-bg-sec: #FFFFFF;
+    --cor-texto: #262627;
+    --cor-texto-apagado: #AEAEBA;
+    --cor-titles: #696977;
+    --roxo-claro: #ECE1FE;
+}
+
+/* Container principal */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 65px;
+  gap: 35px !important;
+}
+
+.sec-pesquisar {
+  width: 100%;
+  margin-bottom: 0px !important;
+}
+
+/* CARD AJUDA */
+.pai-card-ajuda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.container-card-ajuda {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-items: center;
+}
+
+.recuo { text-indent:3em }
+
+.card-ajuda {
+  list-style: none;
+  position: relative;
+  width: 295px;
+  height: 200px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  background-color: white;
+  cursor: pointer;
+}
+
+.card-ajuda-front,
+.card-ajuda-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.card-ajuda-front {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.card-ajuda-front p {
+  font-size: 10px;
+}
+
+.card-ajuda-back {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.card-ajuda:hover .card-ajuda-front {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card-ajuda:hover .card-ajuda-back {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card-ajuda p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #696977;
+}
+
+.i-ajuda {
+  font-size: 40px;
+  color: #6C1DE9;
+}
+
+/* Back content */
+.div-as1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.div-as1 span {
+  font-size: 12px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.div-as1 span:hover {
+  color: #6C1DE9;
+  text-decoration: underline #6C1DE9;
+}
+
+.div-as2 span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.1s;
+}
+
+.div-as2 span:hover {
+  color: #6C1DE9;
+}
+
+/* Título da seção */
+.div-ajuda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.div-meajuda{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.div-meajuda p {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #696977;
+}
+
+.opaciti0{
+  opacity: 0;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border: 1px solid #FFF;
+  border-radius: 3px;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.2);
+  background-color: var(--cor-bg-sec);
+  padding: 0 20px;
+  box-sizing: border-box;
+  transition: border 0.3s, box-shadow 0.3s;
+  gap: 15px;
+  position: relative;
+  bottom: 66px;
+  margin-bottom: -45px;
+}
+
+.input-container:focus-within {
+  border: 1.5px solid #6C1DE9;
+  color: #6C1DE9;
+}
+
+.i-duvida {
+  font-size: 16px;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.input-container:focus-within .i-duvida {
+  color: #6C1DE9;
+}
+
+.div-duvida {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 14px;
+  background: transparent;
+  color: #000;
+}
+
+.div-ajuda p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #696977;
+}
+
+/* FAQ (se usar) */
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.faq-section .div-faq {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  counter-reset: li-counter;
+}
+
+.faq-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-li {
+  position: relative;
+  counter-increment: li-counter;
+  display: flex;
+  align-items: center;
+}
+
+.faq-li::before {
+  font-size: 14px;
+  content: counter(li-counter) ". ";
+  font-weight: bold;
+  margin-right: 10px;
+  color: #696977;
+}
+
+.faq-a {
+  font-size: 14px;
+  color: #696977;
+  transition: color 0.1s;
+}
+
+.faq-a:hover {
+  color: #6C1DE9;
+  text-decoration: underline #6C1DE9;
+}
+
+.btn-faleconosco{
+  cursor: pointer;
+  background-color: var(--roxo);
+  color: var(--cor-bg-sec);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  justify-content: center;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 15px;
+  transition: 0.1s;
+  &:hover {
+      background-color: var(--hover-roxo);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .container-card-ajuda {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-ajuda{
+    width: 178px;
+    height: 160px;
+  } 
+  .faq-a{
+    font-size: 12px;
+  }
+
+  .faq-li::before{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 830px) {
+  .container-card-ajuda {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .faq-section .div-faq {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+
+  .div-ajuda p{
+    font-size: 14px;
+  }
+  .div-duvida{
+    font-size: 12px;
+  }
+
+  .i-duvida{
+    font-size: 14px;
+  }
+
+  .div-as2 a{
+    font-size: 12px;
+  }
+
+  .div-as1 a{
+    font-size: 10px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .container-card-ajuda {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .faq-section .div-faq {
+    flex-direction: column;
+  }
+} 
+
+@media (max-width: 425px){
+  .container-card-ajuda{
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .card-ajuda{
+    width: 148px;
+    height: 130px;
+  } 
+
+  .card-ajuda-back{
+    gap: 5px;
+  }
+
+  .card-ajuda-front{
+    gap: 10px;
+  }
+
+  .div-as1 span{
+    font-size: 9px!important  ;
+    gap: 5px;
+  }
+
+  .div-ajuda p{
+    font-size: 12px;
+  }
+  .i-ajuda{
+    font-size: 35px;
+  }
+
+  .div-as2 a{
+    font-size: 10px;
+  }
+
+  .div-as2 span{
+    font-size: 10px;
+  }
+}
+

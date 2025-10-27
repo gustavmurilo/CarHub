@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/anuncio.css">
+    <link rel="icon" id="link_icon_navegador">
+    <title id="title-pagina"> - Anúncio</title>
+    <!-- TERMINAR ( OLHAR O FIGMA) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- jQuery (Necessário para o Owl Carousel funcionar) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts das funções essenciais do Header -->
+    <script src="assets/js/header.js" defer></script>
+    <!-- CSS do Footer, Header e Responsivo de ambos  -->
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+    <!-- JS anúncio de carro -->
+    <script src="assets/js/anuncio-carro.js" defer></script>
+    <!-- JS Comum de Anúncio -->
+    <script src="assets/js/anuncio.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo hidden">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+        <div id="barra-lateral">
+            <a href="index.html">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-veiculos"><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#footer">Contato</a></li>
+                    <li><a href="faq.html">Ajuda</a></li>
+                </ul>
+            </nav>
+            <a href="" id="aDivEntrar">
+                <div class="div-usuario tooltip div-tip-user" id="divEntrar">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p id="nomeUsuario">Entrar</p>
+                    <span class="tooltip-text tip-user">Entrar na conta</span>
+                </div>
+            </a>
+            <p id="fecharBarraLateral">&times;</p>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+
+    <main>
+        <div class="div-pai-banner-venda">
+            <div class="container">
+                <!-- Carrossel de imagens -->
+                <div class="owl-carousel" id="div-owl-carousel"></div>
+
+                <button id="nextSlide" class="botao-carrossel right"><i class="fa-solid fa-arrow-right"></i></button>
+                <button id="prevSlide" class="botao-carrossel left"><i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+            <div class="div-contents-pai">
+                <div class="div-content-venda">
+                    <div id="form-editar-anuncio">
+                        <div class="div-title-venda">
+                            <div class="div-title">
+                                <!-- Select marca -->
+                                <select class="vehicleTitle marca" id="select-marca" disabled>
+                                    <option value="Acura">Acura</option>
+                                    <option value="Alfa Romeo">Alfa Romeo</option>
+                                    <option value="Aston Martin">Aston Martin</option>
+                                    <option value="Audi">Audi</option>
+                                    <option value="Bentley">Bentley</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="BYD">BYD</option>
+                                    <option value="Bugatti">Bugatti</option>
+                                    <option value="Cadillac">Cadillac</option>
+                                    <option value="Chevrolet">Chevrolet</option>
+                                    <option value="Chery">Chery</option>
+                                    <option value="Citroën">Citroën</option>
+                                    <option value="Dodge">Dodge</option>
+                                    <option value="Ferrari">Ferrari</option>
+                                    <option value="Fiat">Fiat</option>
+                                    <option value="Ford">Ford</option>
+                                    <option value="GMC">GMC</option>
+                                    <option value="Honda">Honda</option>
+                                    <option value="Hyundai">Hyundai</option>
+                                    <option value="Infiniti">Infiniti</option>
+                                    <option value="JAC">JAC</option>
+                                    <option value="Jeep">Jeep</option>
+                                    <option value="Kia">Kia</option>
+                                    <option value="Land Rover">Land Rover</option>
+                                    <option value="Lexus">Lexus</option>
+                                    <option value="Maserati">Maserati</option>
+                                    <option value="McLaren">McLaren</option>
+                                    <option value="Mazda">Mazda</option>
+                                    <option value="Mini">Mini</option>
+                                    <option value="Mitsubishi">Mitsubishi</option>
+                                    <option value="Nissan">Nissan</option>
+                                    <option value="Peugeot">Peugeot</option>
+                                    <option value="Porsche">Porsche</option>
+                                    <option value="Renault">Renault</option>
+                                    <option value="Rolls-Royce">Rolls-Royce</option>
+                                    <option value="Saab">Saab</option>
+                                    <option value="Smart">Smart</option>
+                                    <option value="Subaru">Subaru</option>
+                                    <option value="Shineray">Shineray</option>
+                                    <option value="Suzuki">Suzuki</option>
+                                    <option value="Tesla">Tesla</option>
+                                    <option value="Toyota">Toyota</option>
+                                    <option value="Volkswagen">Volkswagen</option>
+                                    <option value="Volvo">Volvo</option>
+                                </select>
+                                <p class="select-mirror" id="mirror-select-marca"></p>
+
+                                <!-- Input modelo -->
+                                <input class="vehicleTitle modelo" id="input-modelo" disabled></input>
+                                <p class="input-mirror" id="mirror-input-modelo"></p>
+                                <div id="div-icons-actions">
+                                    <!-- Div Botão Editar -->
+                                    <div class="tooltip div-tip-edit">
+                                        <i class="fa-solid fa-pencil" id="editarAnuncio"></i>
+                                        <span class="tooltip-text tip-edit">Editar anúncio</span>
+                                    </div>
+                                    <!-- Div Botão Manutenção -->
+                                    <div class="tooltip div-tip-manu">
+                                        <i class="fa-solid fa-screwdriver-wrench" id="addManutencao"></i>
+                                        <span class="tooltip-text tip-manu">Adicionar manutenção</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="vehicleSub" id="input-subtitle" disabled></input>
+                            <p class="input-mirror" id="mirror-input-subtitle"></p>
+                        </div>
+                        <form class="itens-details">
+                            <div>
+                                <p class="itemcss-title">Cidade - Estado</p>
+                                <div class="formataçãoInput">
+                                    <select class="select-info" id="input-cidade" disabled></select>
+                                    <span id="dash-cidade-select">-</span>
+                                    <select class="select-info" id="input-estado" disabled></select>
+                                </div>
+                                <div class="formataçãoInput">
+                                    <p class="select-mirror" id="mirror-input-cidade"></p>
+                                    <span id="dash-cidade-mirror">-</span>
+                                    <p class="select-mirror" id="mirror-input-estado"></p>
+                                </div>
+                            </div>
+
+                            <div class="li-vazia-1"></div>
+                            <div class="li-vazia-2"></div>
+                            <div class="li-vazia-3"></div>
+
+                            <div>
+                                <p class="itemcss-title">Ano Fabricação / Modelo</p>
+                                <div class="formataçãoInput">
+                                    <select class="select-info" id="select-ano-fabricacao" disabled></select>
+                                    <span id="barra-ano-select">/</span>
+                                    <select class="select-info" id="select-ano-modelo" disabled></select>
+                                </div>
+                                <div class="formataçãoInput">
+                                    <p class="select-mirror" id="mirror-select-ano-fabricacao"></p>
+                                    <span id="barra-ano-mirror">/</span>
+                                    <p class="select-mirror" id="mirror-select-ano-modelo"></p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="itemcss-title">Quilometragem</p>
+                                <input class="input-info" id="input-quilometragem" disabled />
+                                <p class="input-mirror" id="mirror-input-quilometragem"></p>
+                            </div>
+
+                            <div>
+                                <p class="itemcss-title">Câmbio</p>
+                                <select class="select-info" id="select-cambio" disabled>
+                                    <option value="Câmbio Manual">Câmbio Manual</option>
+                                    <option value="Câmbio Automático">Câmbio Automático</option>
+                                    <option value="Câmbio Sequencial">Câmbio Sequencial</option>
+                                    <option value="Câmbio CVT (Transmissão Variável Contínua)">Câmbio CVT (Transmissão
+                                        Variável Contínua)</option>
+                                    <option value="Câmbio Dupla Embreagem">Câmbio Dupla Embreagem</option>
+                                </select>
+                                <p class="select-mirror" id="mirror-select-cambio"></p>
+                            </div>
+
+                            <div>
+                                <p class="itemcss-title">Categoria</p>
+                                <select class="select-info" id="select-categoria" disabled>
+                                    <option value="SUV">SUV</option>
+                                    <option value="Sedã">Sedã</option>
+                                    <option value="Hatchback">Hatchback</option>
+                                    <option value="Picape">Picape</option>
+                                    <option value="Crossover">Crossover</option>
+                                    <option value="Minivan">Minivan</option>
+                                    <option value="Esportivo">Esportivo</option>
+                                    <option value="Luxo">Luxo</option>
+                                    <option value="Compacto">Compacto</option>
+                                    <option value="Elétrico">Elétrico</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                </select>
+                                <p class="select-mirror" id="mirror-select-categoria"></p>
+                            </div>
+
+                            <div>
+                                <p class="itemcss-title">Combustível</p>
+                                <select class="select-info" id="select-combustivel" disabled>
+                                    <option value="Álcool">Álcool</option>
+                                    <option value="Gasolina">Gasolina</option>
+                                    <option value="Flex">Flex</option>
+                                    <option value="Etanol">Etanol</option>
+                                    <option value="Diesel">Diesel</option>
+                                    <option value="GNV (Gás Natural Veicular)">GNV (Gás Natural Veicular)</option>
+                                    <option value="Elétrico">Elétrico</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                </select>
+                                <p class="select-mirror" id="mirror-select-combustivel"></p>
+                            </div>
+
+                            <div>
+                                <p class="itemcss-title">Cor</p>
+                                <select class="select-info" id="select-cor" disabled>
+                                    <option value="Branco">Branco</option>
+                                    <option value="Preto">Preto</option>
+                                    <option value="Prata">Prata</option>
+                                    <option value="Cinza">Cinza</option>
+                                    <option value="Vermelho">Vermelho</option>
+                                    <option value="Vermelho">Vermelho Escuro</option>
+                                    <option value="Azul">Azul</option>
+                                    <option value="Azul Marinho">Azul Escuro</option>
+                                    <option value="Verde Escuro">Verde</option>
+                                    <option value="Verde Escuro">Verde Escuro</option>
+                                    <option value="Marrom">Marrom</option>
+                                    <option value="Dourado">Dourado</option>
+                                    <option value="Laranja">Laranja</option>
+                                    <option value="Amarelo">Amarelo</option>
+                                    <option value="Roxo">Roxo</option>
+                                </select>
+                                <p class="select-mirror" id="mirror-select-cor"></p>
+                            </div>
+
+                            <div>
+                                <p class="itemcss-title">Licenciado</p>
+                                <select id="select-licenciado" class="select-info" disabled>
+                                    <option value="1">Sim</option>
+                                    <option value="0">Não</option>
+                                </select>
+                                <p class="select-mirror" id="mirror-select-licenciado"></p>
+                            </div>
+
+                            <div>
+                                <p class="itemcss-title" id="label-placa">Final da Placa</p>
+                                <input class="input-info" id="input-placa" maxlength="7" disabled />
+                                <p class="input-mirror" id="mirror-input-placa"></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="div-content-vendas-pai">
+                    <div class="div-content-venda-filho">
+                        <div class="div-preco">
+                            <input class="input-info" type="text" id="input-preco-venda">
+                            <p class="input-mirror" id="mirror-input-preco-venda"></p>
+                        </div>
+
+                        <p class="mensagem" id="mensagem-user">Gostou do veículo? Reserve já!</p>
+                        <p class="mensagem" id="mensagem-adm">Editou seu anúncio? Salve suas alterações!</p>
+                        <p class="mensagem" id="mensagem-reserva-cliente">Gostou do veículo? Finalize sua compra!</p>
+                        <p class="mensagem" id="mensagem-reserva-adm">Esse veículo está reservado no momento.</p>
+                        <p class="mensagem" id="mensagem-vendido-cliente">Obrigado por adquirir seu veículo conosco!</p>
+                        <p class="mensagem" id="mensagem-vendido-adm">Esse veículo já foi vendido!</p>
+
+                        <div class="div-buttons vendedor" id="div-button-vendedor">
+                            <button class="salvar-btn" id="salvar-alteracoes" disabled>Salvar alterações</button>
+                            <div class="tooltip div-tip-del-anuncio div-icon-trash">
+                                <i class="fa-solid fa-trash icon-trash" id="deletar-veiculo"></i>
+                                <span class="tooltip-text tip-del-anuncio">Deletar anúncio</span>
+                            </div>
+                        </div>
+
+                        <div class="div-buttons vendido" id="div-button-vendido">
+                            <button class="salvar-btn ver-detalhes" id="ver-detalhes"></button>
+                        </div>
+
+                        <div class="div-buttons canc-reserva" id="div-button-cancelar-reserva-cliente">
+                            <button class="comprar-btn">Compre Já!</button>
+                            <button class="salvar-btn cancelar-reserva tooltip div-tip-canc-reserva">
+                                <i class="fa-solid fa-ban"></i>
+                                <span class="tooltip-text tip-canc-reserva">Cancelar reserva</span>
+                            </button>
+                        </div>
+
+                        <div class="div-buttons canc-reserva" id="div-button-cancelar-reserva-adm">
+                            <button class="comprar-btn">Continuar compra</button>
+                            <button class="salvar-btn cancelar-reserva tooltip div-tip-canc-reserva">
+                                <i class="fa-solid fa-ban"></i>
+                                <span class="tooltip-text tip-canc-reserva">Cancelar reserva</span>
+                            </button>
+                        </div>
+
+                        <div class="div-buttons cliente" id="div-button-cliente">
+                            <button class="comprar-btn">Compre Já!</button>
+                            <button class="salvar-btn reservar-cliente tooltip div-tip-reservar" id="reservar-btn">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span class="tooltip-text tip-reservar">Reservar</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="div-content-venda-filho2">
+                        <div class="circleLogo">
+                            <!-- Imagem da Marca do Veículo -->
+                            <img src="" id="logo-img" alt="Logo Marca">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="sec-marcas">
+            <h4>Marcas ofertadas - Carros</h4>
+            <div class="div-carrossel">
+                <div class="div-marcas">
+                    <a class="a-marcas-car" href="veiculos.html" marca="BMW">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/bmw.png" alt="BMW Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="BYD">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/byd.svg" alt="BYD Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Toyota">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/toyota.png" alt="Toyota Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Volkswagem">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/volkswagem.png" alt="Volkswagem Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Fiat">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/fiat.svg" alt="Fiat Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Ford">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/ford.png" alt="Ford Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Nissan">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/nissan.png" alt="Nissan Logo">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-modelos">
+            <h4> Principais modelos - Carros</h4>
+            <div class="div-carrossel">
+                <div class="div-modelos">
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Elétrico">
+                        <div class="eletricos">
+                            <p>Elétricos</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Hatchback">
+                        <div class="hatchback">
+                            <p>Hatchback</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Picape">
+                        <div class="picapes">
+                            <p>Picapes</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Sedã">
+                        <div class="sedans">
+                            <p>Sedans</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="SUV">
+                        <div class="suvs">
+                            <p>SUVs</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div id="divAlertMessage"></div>
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modais -->
+    <!-- Talvez os modais não serão necessários para todas as páginas -->
+    <div id="modal-nav-veiculos">
+        <div id="pagina-veiculo-carro">
+            <i class="fa-solid fa-car"></i>
+            <p>Comprar carros</p>
+        </div>
+        <div id="pagina-veiculo-moto">
+            <i class="fa-solid fa-motorcycle"></i>
+            <p>Comprar motos</p>
+        </div>
+    </div>
+
+    <!-- Modal comprar -->
+    <div class="modal-comprar" id="modal-comprar">
+        <i class="fa-solid fa-xmark btn-fechar-financiamento"></i>
+        <p class="title-forma">Forma de pagamento</p>
+        <div class="div-pagar">
+            <div class="div-fpagamento" id="btn-pix">
+                <p>À vista</p>
+                <i class="fa-solid fa-money-bill"></i>
+            </div>
+
+            <div class="div-fpagamento" id="btn-financiamento">
+                <p>Parcelamento</p>
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pix -->
+    <div class="modal-pix" id="modal-pix">
+        <i class="fa-solid fa-arrow-left voltar-modal-compra"></i>
+        <p class="title-forma">QR Code</p>
+
+        <div class="div-qrcode">
+            <!-- Imagem qr code pix -->
+            <div id="loading-img-qrcode"></div>
+            <div id="img-qrcode"></div>
+
+            <p>Um email com mais informações para a compra do veículo foi enviado para <span
+                    id="email-cliente-compra">email@gmail.com</span></p>
+        </div>
+
+        <button id="confirmar-compra-pix" class="disabled">Confirmar compra</button>
+    </div>
+
+    <!-- Modal finaciamento -->
+    <div class="modal-financiamento" id="modal-financiamento">
+        <i class="fa-solid fa-arrow-left voltar-modal-compra"></i>
+        <p class="title-forma">Parcelamento</p>
+
+        <div class="div-input-info">
+            <label class="valor-title">Valor de entrada:</label>
+            <input type="text" name="input-entrada" id="input-entrada">
+        </div>
+
+        <div class="div-input-info">
+            <label class="valor-title">Quantidade de parcelas:</label>
+            <select id="select-parcelas" name="select-parcelas"></select>
+        </div>
+
+        <div class="div-valor-final">
+            <p class="valor-parcela">Valor total do parcelamento:</p>
+            <p class="valor-result" id="p-valor-total">~</p>
+        </div>
+
+        <button id="confirmar-financiamento">Gerar parcelas</button>
+        <p id="visualizar-parcelas">Visualizar parcelas</p>
+    </div>
+
+    <!-- Modal visualizar parcelas -->
+    <div class="modal-parcelas" id="modal-parcelas">
+        <i class="fa-solid fa-arrow-left voltar-modal-financiamento"></i>
+
+        <p class="title-forma">Parcelas</p>
+
+        <div class="table-container parcelas">
+            <table class="parcela-table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Valor da parcela</th>
+                        <th>Vencimento</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-parcelas"></tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Modal manutenção -->
+    <div class="modal-manu">
+        <div class="bg-carregamento-manu">
+            <div class="dot-spinner">
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+                <div class="dot-spinner__dot"></div>
+            </div>
+        </div>
+
+        <i class="fa-solid fa-arrow-right setas" id="manutencao-prox"></i>
+        <i class="fa-solid fa-arrow-left setas" id="manutencao-voltar"></i>
+
+        <i class="fa-solid fa-xmark" id="fecharModalManu"></i>
+        <p id="titleManutencao">Manutenção</p>
+        <div class="div-info">
+            <input type="hidden" id="input-id-manutencao">
+            <div class="div-input date">
+                <label for="input-date">Data</label>
+                <input class="input" name="input-date" id="input-date" type="date" required />
+            </div>
+            <div class="div-input obs">
+                <label for="input-obs">Observação</label>
+                <input class="input" name="input-obs" id="input-obs" type="text"
+                    placeholder="Descreva o que está ocorrendo" required />
+            </div>
+            <div class="div-input valor">
+                <label>Valor total</label>
+                <p id="valor-total-manu">R$ 0,00</p>
+            </div>
+        </div>
+        <div class="div-buttons">
+            <button class="button-cel" id="cancelar-manu" disabled>Cancelar<i class="fa-solid fa-xmark"></i></button>
+            <button class="button-add" id="add-servico" disabled>Adicionar serviço</button>
+            <button class="button-add" id="salvar-manu">Salvar</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="icon-col"><i class="fa-solid fa-screwdriver-wrench"></i></th>
+                        <th>Serviço</th>
+                        <th>Valor unitário</th>
+                        <th>Quantidade</th>
+                        <th>Valor total</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-servicos"></tbody>
+            </table>
+        </div>
+
+        <div id="btn-gerar-relatorio">
+            <p id="texto-gerar-relatorio">Gerar relatório</p>
+            <i id="icon-gerar-relatorio" class="fa-solid fa-file"></i>
+        </div>
+    </div>
+
+    <!-- Modal adicionar serviço -->
+    <form id="formAddServico">
+        <i class="fa-solid fa-arrow-left" id="fecharModalAddServico"></i>
+        <p class="p-title">Adicionar serviço</p>
+
+        <!-- Div seleção de serviço -->
+        <div class="div-input">
+            <label for="select-servico">Selecione o serviço</label>
+            <div class="div-select-servico-add">
+                <select name="select-servico" id="select-servico">
+                    <option value="">Selecione um serviço</option>
+                </select>
+
+                <div class="tooltip div-tip-add-serv link_para_servicos">
+                    <i class="fa-solid fa-plus"></i>
+                    <span class="tooltip-text tip-add-serv">Novo serviço</span>
+                </div>
+            </div>
+        </div>
+        <div class="container-valores">
+            <!-- Div valor serviço (somente leitura) -->
+            <div class="div-input">
+                <label for="valor-servico">Valor</label>
+                <input name="valor-servico" id="valor-servico" type="text" value="R$ 0,00" readonly />
+            </div>
+
+            <!-- Div quantidade de serviços -->
+            <div class="div-input">
+                <label for="quantidade-servico">Quantidade</label>
+                <input name="quantidade-servico" id="quantidade-servico" type="number" min="1" value="1" />
+            </div>
+        </div>
+        <button type="submit">Adicionar serviço</button>
+    </form>
+
+    <!-- Modal editar serviço -->
+    <form id="formEditarServico">
+        <i class="fa-solid fa-arrow-left" id="fecharModalEditarServico"></i>
+        <p class="p-title">Editar serviço</p>
+        <!-- Campo oculto para ID -->
+        <input type="hidden" name="id-editar-servico" id="id-editar-servico">
+        <!-- Div seleção de serviço -->
+        <div class="div-input">
+            <label for="select-editar-servico">Selecione o serviço</label>
+            <select name="select-editar-servico" id="select-editar-servico">
+                <option value="">Selecione um serviço</option>
+            </select>
+        </div>
+        <div class="container-valores">
+            <!-- Div valor serviço (somente leitura) -->
+            <div class="div-input">
+                <label for="valor-editar-servico">Valor</label>
+                <input name="valor-editar-servico" id="valor-editar-servico" type="text" value="R$ 0,00" readonly />
+            </div>
+
+            <!-- Div quantidade de serviços -->
+            <div class="div-input">
+                <label for="quantidade-editar-servico">Quantidade</label>
+                <input name="quantidade-editar-servico" id="quantidade-editar-servico" type="number" min="1"
+                    value="1" />
+            </div>
+        </div>
+
+        <button type="submit">Salvar alterações</button>
+        <button type="button" id="excluir-servico">Excluir</button>
+    </form>
+
+    <!-- Modal Login -->
+    <div id="modal-login">
+        <p class="title">Faça login para uma experiência ainda melhor! ;D</p>
+        <a href="login.html" class="btn-login">Fazer login</a>
+        <p class="subtitle">Não tem uma conta? <a href="cadastro.html">Criar conta</a></p>
+        <p id="closeModalLogin">&times;</p>
+    </div>
+
+    <!-- Modal editar imagens -->
+    <form id="modal-editar-imagem">
+        <i class="fa-solid fa-xmark" id="closeModalEditarImagem"></i>
+
+        <p class="titulo">Edite aqui as imagens do seu veículo</p>
+        <p class="subtitulo">Insira no mínimo 3 imagens</p>
+
+        <!-- Input de upload de imagem -->
+        <label for="upload-imagem" class="upload-label">
+            <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        </label>
+        <!-- Altere o atributo name para "imagens" -->
+        <input type="file" id="upload-imagem" accept=".jpg,.jpeg,.png" name="imagens" multiple />
+
+        <!-- Container onde as imagens serão exibidas -->
+        <div class="div-preview-container-pai">
+            <div id="preview-container"></div>
+        </div>
+
+        <button type="submit">Salvar alterações</button>
+    </form>
+
+    <!-- Div Carregando -->
+    <div id="bg-carregamento">
+        <div class="dot-spinner">
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+            <div class="dot-spinner__dot"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/faq.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <script src="assets/js/home.js" defer></script>
+    <!-- Scripts das funções essenciais do Header -->
+    <script src="assets/js/header.js" defer></script>
+    <!-- CSS do Footer, Header e Responsivo de ambos  -->
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+    <link rel="stylesheet" href="assets/css/faq-follow.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title id="title-pagina"> - Ajuda</title>
+    <link rel="icon" id="link_icon_navegador">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo hidden">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+        <div id="barra-lateral">
+            <a href="index.html">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-veiculos"><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#footer">Contato</a></li>
+                    <li><a href="faq.html">Ajuda</a></li>
+                </ul>
+            </nav>
+            <a href="" id="aDivEntrar">
+                <div class="div-usuario" id="divEntrar">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p id="nomeUsuario">Entrar</p>
+                </div>
+            </a>
+            <p id="fecharBarraLateral">&times;</p>
+        </div>
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+
+    <main>
+        <!-- RETIRAR A PARTIR DESSE TRECHO -->
+        <section class="sec-pesquisar">
+            <div class="banner2"></div>
+        </section>
+        <section class="sec-faq">
+            <div style="width: 915px;" class="input-container" aria-label="Campo de dúvida com lupa">
+                <i class="fa-solid fa-magnifying-glass i-duvida"></i>
+                <input class="div-duvida" type="text" placeholder="Digite sua dúvida" />
+            </div>
+
+            <div class="div-ajuda">
+                <p>Fale Conosco</p>
+            </div>
+            
+            <form action="#" method="POST" enctype="multipart/form-data" class="form-contato-compacto">
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                        <small class="input-help">Digite um e-mail válido para receber nossa resposta</small>
+                    </div>
+                    <div class="form-col">
+                        <label for="telefone">Telefone *</label>
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+                        <small class="input-help">Formato: (11) 99999-9999 com DDD</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome completo (opcional)">
+                         <small class="input-help">Ex: Leandro Silva Santos
+                         </small>
+                    </div>
+                    
+                    <div class="form-col">
+                        <label for="cpf">CPF *</label>
+                        <input type="text" id="cpf" name="cpf" required placeholder="Digite o CPF">
+                        <small class="input-help">Insira o CPF sem pontos e traços. Ex: 99999999999</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="assunto">Assunto *</label>
+                        <input type="text" id="assunto" name="assunto" required placeholder="Assunto da mensagem">
+                        <small class="input-help">Descreva brevemente o tema da sua solicitação</small>
+                    </div>
+                    <div class="form-col">
+                        <label for="motivo">Motivo *</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="">Selecione</option>
+                            <option value="erro-site">Erro no site</option>
+                            <option value="erro-busca">Problema na busca</option>
+                            <option value="erro-login">Erro de login</option>
+                            <option value="dados-veiculo">Dados do veículo</option>
+                            <option value="pagamento">Pagamento</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <small class="input-help">Selecione a categoria que melhor descreve seu contato</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição *</label>
+                    <textarea style="resize: none;" id="descricao" name="descricao" required rows="3" 
+                            placeholder="Descreva sua solicitação..."></textarea>
+                    <small class="input-help">Forneça detalhes para podermos ajudar melhor</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="anexos">Anexos</label>
+                    <div class="drop-zone" id="dropZone">
+                        <div class="drop-zone-content">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <p>Adicione o arquivo ou solte os arquivos aqui</p>
+                            <input type="file" id="anexos" name="anexos[]" multiple accept=".jpg,.png,.pdf,.doc,.docx" hidden>
+                            <button type="button" class="btn-select-file" onclick="document.getElementById('anexos').click()">
+                                Selecionar Arquivos
+                            </button>
+                        </div>
+                    </div>
+                    <small class="input-help">Envie anexos se necessário </small>
+                    <div id="file-list" class="file-list"></div>
+                </div>
+
+                <div class="form-group-button">
+                    <button type="submit" class="btn-enviar">
+                     Enviar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+
+
+        
+
+        <!-- RETIRAR ATÉ ESSE TRECHO -->
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a href="https://www.google.com.br/maps/place/Birigui,+SP/@-21.289722,-50.375397,13z/data=!3m1!4b1!4m6!3m5!1s0x949614dbc17ff293:0x17db7a678a4bf9ad!8m2!3d-21.2810302!4d-50.3326577!16zL20vMDN5c3Q1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-text">Birigui - SP</a>
+                <a href="https://www.google.com.br/maps/place/Ara%C3%A7atuba,+SP/@-21.1987663,-50.543594,12z/data=!3m1!4b1!4m6!3m5!1s0x949644777aaaf101:0xe8b1a2cfce0a1d27!8m2!3d-21.2066711!4d-50.4387286!16zL20vMDNmZnM4?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-text">Araçatuba - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text">(18) 99999-9999</a>
+                <a class="footer-text">netcars.contato@gmail.com</a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modais -->
+    <!-- Talvez os modais não serão necessários para todas as páginas -->
+    <div id="modal-nav-veiculos">
+        <div id="pagina-veiculo-carro">
+            <i class="fa-solid fa-car"></i>
+            <p>Comprar carros</p>
+        </div>
+        <div id="pagina-veiculo-moto">
+            <i class="fa-solid fa-motorcycle"></i>
+            <p>Comprar motos</p>
+        </div>
+    </div>
+
+    <div id="modal-login">
+        <p class="title">Faça login para uma experiência
+            ainda melhor! ;D</p>
+        <a href="login.html" class="btn-login">Fazer login</a>
+        <p class="subtitle">Não tem uma conta? <a href="cadastro.html">Criar conta</a></p>
+        <p id="closeModalLogin">&times;</p>
+    </div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('anexos');
+    const fileList = document.getElementById('file-list');
+    let filesArray = []; // Array para gerenciar os arquivos
+    
+    // Eventos de drag and drop
+    dropZone.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+    
+    dropZone.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+    });
+    
+    dropZone.addEventListener('drop', function(e) {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        
+        const files = Array.from(e.dataTransfer.files);
+        filesArray = files;
+        displayFiles();
+    });
+    
+    // Clique na área
+    dropZone.addEventListener('click', function() {
+        fileInput.click();
+    });
+    
+    // Mudança no input
+    fileInput.addEventListener('change', function() {
+        filesArray = Array.from(this.files);
+        displayFiles();
+    });
+    
+    // Função para exibir arquivos selecionados
+    function displayFiles() {
+        fileList.innerHTML = '';
+        filesArray.forEach((file, index) => {
+            const fileItem = document.createElement('div');
+            fileItem.className = 'file-item';
+            fileItem.innerHTML = `
+                <span class="file-name">${file.name}</span>
+                <span class="file-remove" onclick="removeFile(${index})">&times;</span>
+            `;
+            fileList.appendChild(fileItem);
+        });
+    }
+    
+    // Função global para remover arquivo
+    window.removeFile = function(index) {
+        filesArray.splice(index, 1);
+        
+        // Criar um novo FileList
+        const dt = new DataTransfer();
+        filesArray.forEach(file => dt.items.add(file));
+        fileInput.files = dt.files;
+        
+        displayFiles();
+    };
+});
+
+</script>
+</html>

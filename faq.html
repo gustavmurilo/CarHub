@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/faq.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <script src="assets/js/home.js" defer></script>
+    <!-- Scripts das funções essenciais do Header -->
+    <script src="assets/js/header.js" defer></script>
+    <!-- CSS do Footer, Header e Responsivo de ambos  -->
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title id="title-pagina"> - Ajuda</title>
+    <link rel="icon" id="link_icon_navegador">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo hidden">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+        <div id="barra-lateral">
+            <a href="index.html">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-veiculos"><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#footer">Contato</a></li>
+                    <li><a href="faq.html">Ajuda</a></li>
+                </ul>
+            </nav>
+            <a href="" id="aDivEntrar">
+                <div class="div-usuario" id="divEntrar">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p id="nomeUsuario">Entrar</p>
+                </div>
+            </a>
+            <p id="fecharBarraLateral">&times;</p>
+        </div>
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+
+    <main>
+        <!-- RETIRAR A PARTIR DESSE TRECHO -->
+        <section class="sec-pesquisar">
+            <div class="banner2"></div>
+        </section>
+        <section class="sec-faq">
+                
+            <div class="input-container" aria-label="Campo de dúvida com lupa">
+                <i class="fa-solid fa-magnifying-glass i-duvida"></i>
+                <input class="div-duvida" type="text" placeholder="Digite sua dúvida" />
+              </div>
+              
+            <div class="div-ajuda">
+                <p>Sobre o que é sua dúvida?</p>
+                <div class="pai-card-ajuda">
+        
+                    <ul class="container-card-ajuda">
+                        <!-- CADASTRO -->
+                        <li class="card-ajuda">
+                            <div class="card-ajuda-front">
+                                <i class="fa-solid fa-circle-user i-ajuda"></i>
+                                <p>Cadastro</p>
+                            </div>
+                            <div class="card-ajuda-back">
+                                <div class="div-as1">
+                                    <span class="faq-link" data-card="cadastro" data-topic="link_comocriarconta">Criação de Cadastro</span>
+                                    <span class="faq-link" data-card="cadastro" data-topic="link_comofazerlogin">Como efetuar login?</span>
+                                    <span class="faq-link" data-card="cadastro" data-topic="link_comotrocarsenha">Esqueci minha senha. E agora?</span>
+                                </div>
+                                <div class="div-as2">
+                                    <span class="faq-link" data-card="cadastro" data-topic="link_comocriarconta">Mais artigos</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- COMPRAR -->
+                        <li class="card-ajuda">
+                            <div class="card-ajuda-front">
+                                <i class="fa-solid fa-shopping-cart i-ajuda"></i>
+                                <p>Comprar</p>
+                            </div>
+                            <div class="card-ajuda-back">
+                                <div class="div-as1">
+                                    <span class="faq-link" data-card="comprar" data-topic="link_carrorevisado">Comprar veículo</span>
+                                    <span class="faq-link" data-card="comprar" data-topic="link_financiarusado">Forma de pagamento</span>
+                                    <span class="faq-link" data-card="comprar" data-topic="link_testeveiculo">Amortizar parcelas</span>
+                                </div>
+                                <div class="div-as2">
+                                    <span class="faq-link" data-card="comprar" data-topic="link_carrorevisado">Mais artigos</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- SEGURANÇA -->
+                        <li class="card-ajuda">
+                            <div class="card-ajuda-front">
+                                <i class="fa-solid fa-shield-halved i-ajuda"></i>
+                                <p>Segurança</p>
+                            </div>
+                            <div class="card-ajuda-back">
+                                <div class="div-as1">
+                                    <span class="faq-link" data-card="seguranca" data-topic="link_siteseguro">Proteção de Dados</span>
+                                    <span class="faq-link" data-card="seguranca" data-topic="link_anunciosreais">Os anúncios são reais?</span>
+                                    <span class="faq-link" data-card="seguranca" data-topic="link_veiculosqualidade">Proteger seus dados</span>
+                                </div>
+                                <div class="div-as2">
+                                    <span class="faq-link" data-card="seguranca" data-topic="link_siteseguro">Mais artigos</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- SOBRE NÓS -->
+                        <li class="card-ajuda">
+                            <div class="card-ajuda-front">
+                                <i class="fa-solid fa-users i-ajuda"></i>
+                                <p>Sobre nós</p>
+                            </div>
+                            <div class="card-ajuda-back">
+                                <div class="div-as1">
+                                    <span class="faq-link" data-card="sobrenos" data-topic="link_quemsomos">Quem somos?</span>
+                                    <span class="faq-link" data-card="sobrenos" data-topic="link_surgiuempresa">Qual é a nossa história?</span>
+                                    <span class="faq-link opaciti0" data-card="sobrenos" data-topic="link_surgiuempresa">Qual é a nossa história?</span>
+                                </div>
+                                <div class="div-as2">
+                                    <span class="faq-link" data-card="sobrenos" data-topic="link_quemsomos">Mais artigos</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- SUPORTE -->
+                        <li class="card-ajuda">
+                            <div class="card-ajuda-front">
+                                <i class="fa-solid fa-headset i-ajuda"></i>
+                                <p>Suporte</p>
+                            </div>
+                            <div class="card-ajuda-back">
+                                <div class="div-as1">
+                                    <span class="faq-link" data-card="suporte" data-topic="link_falarsuporte">Como falar com o suporte?</span>
+                                    <span class="faq-link" data-card="suporte" data-topic="link_horarioatendimento">Qual o horário de atendimento?</span>
+                                    <span class="faq-link opaciti0" data-card="suporte" data-topic="link_horarioatendimento">Qual o horário de atendimento?</span>
+                                </div>
+                                <div class="div-as2">
+                                    <span class="faq-link" data-card="suporte" data-topic="link_falarsuporte">Mais artigos</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- EVITE GOLPES -->
+                        <li class="card-ajuda">
+                            <div class="card-ajuda-front">
+                                <i class="fa-solid fa-location-dot i-ajuda"></i>
+                                <p>Localização</p>
+                            </div>
+                            <div class="card-ajuda-back">
+                                <div class="div-as1">
+                                    <span class="faq-link opaciti0" data-card="evitegolpes" data-topic="link_identificargolpes">Qual a localização?</span>
+                                    <span class="faq-link" data-card="evitegolpes" data-topic="link_identificargolpes">Qual a localização?</span>
+                                    <span class="faq-link opaciti0" data-card="evitegolpes" data-topic="link_identificargolpes">Qual a localização?</span>
+                                </div>
+                                <div class="div-as2">
+                                    <span class="faq-link" data-card="evitegolpes" data-topic="link_identificargolpes">Mais artigos</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- INTELIGÊNCIA ARTIFICIAL
+                        <li class="card-ajuda">
+                            <div class="card-ajuda-front">
+                                <i class="fa-solid fa-robot i-ajuda"></i>
+                                <p>Inteligência Artificial</p>
+                            </div>
+                            <div class="card-ajuda-back">
+                                <div class="div-as1">
+                                    <span class="faq-link" data-card="ia" data-topic="link_iabusca">Como a IA responde minhas dúvidas?</span>
+                                    <span class="faq-link" data-card="ia" data-topic="link_iarecomendacoes">As respostas da IA são confiáveis?</span>
+                                    <span class="faq-link" data-card="ia" data-topic="link_iaprecos">A IA aprende com novas perguntas?</span>
+                                </div>
+                                <div class="div-as2">
+                                    <span class="faq-link" data-card="ia" data-topic="link_iabusca">Mais artigos</span>
+                                </div>
+                            </div>
+                        </li> -->
+                    </ul>
+
+                    
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="faq-section">
+            <div class="div-ajuda">
+                <p>Perguntas frequentes</p>
+            </div>
+            <div class="div-faq">
+                <ul class="faq-ul">
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Como posso criar meu cadastro no site corretamente?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Esqueci minha senha, como posso recuperá-la fácil?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Como comprar um veículo usado pelo nosso portal?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Quais formas de pagamento estão disponíveis aqui?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Quais os documentos exigidos para o financiamento?</a>
+                    </li>
+                </ul>
+                <ul class="faq-ul">
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Como simular um financiamento pelo nosso sistema?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Como agendar a manutenção do meu veículo aqui?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Quais são os serviços de manutenção disponíveis?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Como saber se o veículo comprado é realmente seguro?</a>
+                    </li>
+                    <li class="faq-li">
+                        <a href="#" class="faq-a">Como garantir que o carro não tem pendências ocultas?</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="div-meajuda">
+                <p>Não encontrou o que queria? Fale com o suporte!</p>
+                <a href="faleconosco.html" class="btn-faleconosco">FALE CONOSCO</a>
+            </div>
+
+
+        </section>
+        
+        
+
+        <!-- RETIRAR ATÉ ESSE TRECHO -->
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a href="https://www.google.com.br/maps/place/Birigui,+SP/@-21.289722,-50.375397,13z/data=!3m1!4b1!4m6!3m5!1s0x949614dbc17ff293:0x17db7a678a4bf9ad!8m2!3d-21.2810302!4d-50.3326577!16zL20vMDN5c3Q1?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-text">Birigui - SP</a>
+                <a href="https://www.google.com.br/maps/place/Ara%C3%A7atuba,+SP/@-21.1987663,-50.543594,12z/data=!3m1!4b1!4m6!3m5!1s0x949644777aaaf101:0xe8b1a2cfce0a1d27!8m2!3d-21.2066711!4d-50.4387286!16zL20vMDNmZnM4?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer-text">Araçatuba - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text">(18) 99999-9999</a>
+                <a class="footer-text">netcars.contato@gmail.com</a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modais -->
+    <!-- Talvez os modais não serão necessários para todas as páginas -->
+    <div id="modal-nav-veiculos">
+        <div id="pagina-veiculo-carro">
+            <i class="fa-solid fa-car"></i>
+            <p>Comprar carros</p>
+        </div>
+        <div id="pagina-veiculo-moto">
+            <i class="fa-solid fa-motorcycle"></i>
+            <p>Comprar motos</p>
+        </div>
+    </div>
+
+    <div id="modal-login">
+        <p class="title">Faça login para uma experiência
+            ainda melhor! ;D</p>
+        <a href="login.html" class="btn-login">Fazer login</a>
+        <p class="subtitle">Não tem uma conta? <a href="cadastro.html">Criar conta</a></p>
+        <p id="closeModalLogin">&times;</p>
+    </div>
+</body>
+<script>
+
+</script>
+</html>

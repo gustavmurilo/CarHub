@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/perfil.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <link rel="icon" id="link_icon_navegador">
+    <title id="title-pagina"> - Perfil</title>
+    <!-- TERMINAR ( OLHAR O FIGMA) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- JS do NAV específico dessa página -->
+    <script src="assets/js/nav-perfil-vendedor.js" defer></script>
+    <!-- Arquivo JS padrão para todas as páginas de perfil -->
+    <script src="assets/js/perfil-api.js" defer></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" id="aDivLogo">
+            <div class="div-logo-title">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+                <h1>Minha Garagem</h1>
+            </div>
+        </a>
+
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+        <div class="container-perfil" id="barra-lateral">
+            <div class="perfil-usuario">
+                <i class="fa-solid fa-circle-user"></i>
+                <h2 id="nomeNav"></h2>
+                <p id="emailNav"></p>
+            </div>
+            <nav>
+                <a href="veiculos.html"><i class="fa-solid fa-magnifying-glass"></i>Buscar Anúncio</a>
+                <a id="link_minhaConta" class="selecionado"><i class="fa-solid fa-user"></i>Minha Conta</a>
+                <a id="link_reservas"><i class="fa-solid fa-calendar-days"></i>Reservas</a>
+                <a href="adicionar-veiculo.html"><i class="fa-solid fa-car"></i>Adicionar Veículo</a>
+                <a id="deslogarConta"><i class="fa-solid fa-right-to-bracket"></i>Sair</a>
+            </nav>
+            <p id="fecharBarraLateral">&times;</p>
+            <div id="deletar-usuario">
+                <i class="fa-solid fa-trash-can"></i>
+                <p>Deletar conta</p>
+            </div>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+    <main>
+        <section class="container" id="conteudo">
+            <!-- Div Minha Conta -->
+            <div class="container-info-input" id="minha-conta">
+                <div class="informacoes-input">
+                    <h3>Campos com asteriscos ( * ) são obrigatórios </h3>
+                    <form action="" id="formEditarUsuario">
+                        <div class="container-input">
+                            <label class="text" for="input">E-mail*</label>
+                            <input class="input" required name="email" type="email" id="email_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">Nome Completo*</label>
+                            <input class="input" required name="nome_completo" type="text" id="nome_completo_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text date" for="input">Data de nascimento*</label>
+                            <input class="input" required name="data_nascimento" type="date"
+                                id="data_nascimento_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">CPF ou CNPJ*</label>
+                            <input class="input" required name="cpf_cnpj" type="text" id="cpf_cnpj_input" />
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input">Telefone*</label>
+                            <input class="input" required name="telefone" type="tel" id="telefone_input" />
+                        </div>
+                        <h3>Atualizar senha (opcional)</h3>
+                        <div class="container-input">
+                            <label class="text" for="input" id="label-senha-atual">Senha atual</label>
+                            <input class="input" name="senha_hash" type="password" id="input-senha-atual" />
+                            <i class="fa-solid fa-eye" id="mostrarSenhaAtual"></i>
+                        </div>
+                        <div class="container-input">
+                            <label class="text" for="input" id="label-senha-nova">Senha nova</label>
+                            <input class="input" name="senha_nova" type="password" id="input-senha-nova" />
+                            <i class="fa-solid fa-eye" id="mostrarSenhaNova"></i>
+                        </div>
+                        <button type="submit">Atualizar os dados</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Div de Reservas -->
+            <div id="reservas">
+                <h3>Veículos reservados</h3>
+                <div class="div-carrossel">
+                    <div class="conteudo" id="div-reservas"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Div Alert Message -->
+        <div id="divAlertMessage"></div>
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome footer"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

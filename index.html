@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/ac1aaaa398.js" crossorigin="anonymous"></script>
+    <script src="assets/js/home.js" defer></script>
+
+    <!-- Scripts das funções essenciais do Header -->
+    <script src="assets/js/header.js" defer></script>
+    <!-- CSS do Footer, Header e Responsivo de ambos  -->
+    <link rel="stylesheet" href="assets/css/header-footer.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title id="title-pagina"></title>
+    <link rel="icon" id="link_icon_navegador">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <div class="div-logo hidden">
+                <img class="logo-garagem" alt="Logo Netcars">
+                <span class="primeiro-nome"></span>
+                <p class="segundo-nome"></p>
+            </div>
+        </a>
+        <div class="sanduiche" id="sanduicheHeader">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+        <div id="barra-lateral">
+            <a href="index.html">
+                <div class="div-logo">
+                    <img class="logo-garagem" alt="Logo Netcars">
+                    <span class="primeiro-nome"></span>
+                    <p class="segundo-nome"></p>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-veiculos"><a href="veiculos.html">Veículos</a></li>
+                    <li><a href="#footer">Contato</a></li>
+                    <li><a href="faq.html">Ajuda</a></li>
+                </ul>
+            </nav>
+            <a href="" id="aDivEntrar">
+                <div class="div-usuario tooltip div-tip-user" id="divEntrar">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p id="nomeUsuario">Entrar</p>
+                    <span class="tooltip-text tip-user">Entrar na conta</span>
+                </div>
+            </a>
+            <p id="fecharBarraLateral">&times;</p>
+        </div>
+        <div class="overlay-bg" id="overlay-bg"></div>
+    </header>
+
+    <main>
+        <!-- RETIRAR A PARTIR DESSE TRECHO -->
+        <section class="sec-pesquisar">
+            <div class="banner"></div>
+            <div class="div-pesquisar-veiculos">
+                <div class="div-comprar">
+                    <p class="veiculo-selecionado" id="veiculo-carro">Comprar carros</p>
+                    <p class="veiculo-nao-selecionado" id="veiculo-moto">Comprar motos</p>
+                </div>
+
+                <div class="div-input-pesquisar" id="div-input-pesquisar-carro">
+                    <!-- Input pesquisar ofertas carros -->
+                    <input type="text" placeholder="Digite a marca ou modelo do carro" id="inputPesquisarModeloCarro">
+                    <p class="pesquisar" id="pesquisar-carros">Ofertas disponíveis (<span id="qnt-carros"></span>)</p>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <!-- Sugestões -->
+                    <div class="div-sugestoes" id="sugestoes-carros">
+                        <div class="div-marcas" id="div-marcas-carros"></div>
+                        <div class="div-modelos" id="div-modelos-carros"></div>
+                    </div>
+                </div>
+
+                <div class="div-input-pesquisar" id="div-input-pesquisar-moto">
+                    <!-- Input pesquisar ofertas motos -->
+                    <input type="text" placeholder="Digite a marca ou modelo da moto" id="inputPesquisarModeloMoto">
+                    <p class="pesquisar" id="pesquisar-motos">Ofertas disponíveis (<span id="qnt-motos"></span>)</p>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <!-- Sugestões -->
+                    <div class="div-sugestoes" id="sugestoes-motos">
+                        <div class="div-marcas" id="div-marcas-motos"></div>
+                        <div class="div-modelos" id="div-modelos-motos"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sec-marcas">
+            <h4>Marcas ofertadas - Carros</h4>
+            <div class="div-carrossel">
+                <div class="div-marcas">
+                    <a class="a-marcas-car" href="veiculos.html" marca="BMW">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/bmw.png" alt="BMW Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="BYD">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/byd.svg" alt="BYD Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Toyota">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/toyota.png" alt="Toyota Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Volkswagen">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/volkswagem.png" alt="Volkswagen Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Fiat">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/fiat.svg" alt="Fiat Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Ford">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/ford.png" alt="Ford Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-car" href="veiculos.html" marca="Nissan">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-carro/nissan.png" alt="Nissan Logo">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-modelos">
+            <h4> Principais modelos - Carros</h4>
+            <div class="div-carrossel">
+                <div class="div-modelos">
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Elétrico">
+                        <div class="eletricos">
+                            <p>Elétricos</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Hatchback">
+                        <div class="hatchback">
+                            <p>Hatchback</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Picape">
+                        <div class="picapes">
+                            <p>Picapes</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="Sedã">
+                        <div class="sedans">
+                            <p>Sedans</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="carro" categoria="SUV">
+                        <div class="suvs">
+                            <p>SUVs</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-marcas">
+            <h4>Marcas ofertadas - Motos</h4>
+            <div class="div-carrossel">
+                <div class="div-marcas">
+                    <a class="a-marcas-moto" href="veiculos.html" marca="BMW">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-moto/bmw.png" alt="BMW Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-moto" href="veiculos.html" marca="Yamaha">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-moto/yamaha.png" alt="Yamaha Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-moto" href="veiculos.html" marca="Honda">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-moto/honda.png" alt="Honda Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-moto" href="veiculos.html" marca="Ducati">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-moto/ducati.png" alt="Ducati Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-moto" href="veiculos.html" marca="Kawasaki">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-moto/kawasaki.png" alt="Kawasaki Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-moto" href="veiculos.html" marca="Suzuki">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-moto/suzuki.svg" alt="Suzuki Logo">
+                        </div>
+                    </a>
+                    <a class="a-marcas-moto" href="veiculos.html" marca="Harley-Davidson">
+                        <div class="div-marca">
+                            <img src="assets/img/logo-moto/harley_davidson.jpg" alt="Harley Davidson Logo">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec-modelos">
+            <h4>Principais modelos - Motos</h4>
+            <div class="div-carrossel">
+                <div class="div-modelos">
+                    <a href="veiculos.html" tipo-veiculo="moto" categoria="Esportiva">
+                        <div class="esportivas">
+                            <p>Esportivas</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="moto" categoria="Street">
+                        <div class="street">
+                            <p>Street</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="moto" categoria="Trail">
+                        <div class="trail">
+                            <p>Trail</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="moto" categoria="Big Trail">
+                        <div class="big-trail">
+                            <p>Big Trail</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+
+                    <a href="veiculos.html" tipo-veiculo="moto" categoria="Custom">
+                        <div class="motocustom">
+                            <p>Custom</p>
+                            <div class="overlay"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- RETIRAR ATÉ ESSE TRECHO -->
+    </main>
+
+    <footer id="footer">
+        <div class="div-contato">
+            <div>
+                <p class="footer-title">Cidades</p>
+                <a class="footer-text" id="cidade-footer">Birigui - SP</a>
+            </div>
+            <div>
+                <p class="footer-title">Comprar</p>
+                <a href="veiculos.html" class="footer-text">Carros usados</a>
+                <a class="footer-text" id="footer-motos-usadas">Motos usadas</a>
+                <a href="veiculos.html" class="footer-text">Todos</a>
+            </div>
+            <div>
+                <p class="footer-title">Contato</p>
+                <a class="footer-text" id="telefone-footer"></a>
+                <a class="footer-text" id="email-footer"></a>
+            </div>
+        </div>
+        <div class="div-logo">
+            <img class="logo-garagem" alt="Logo Netcars">
+            <span class="primeiro-nome"></span>
+            <p class="segundo-nome"></p>
+        </div>
+        <div class="div-direitos-reservados">
+            <p>© 2025 <span class="net primeiro-nome"></span><span class="cars segundo-nome"></span> S.A. Todos
+                os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modais -->
+    <!-- Talvez os modais não serão necessários para todas as páginas -->
+    <div id="modal-nav-veiculos">
+        <div id="pagina-veiculo-carro">
+            <i class="fa-solid fa-car"></i>
+            <p>Comprar carros</p>
+        </div>
+        <div id="pagina-veiculo-moto">
+            <i class="fa-solid fa-motorcycle"></i>
+            <p>Comprar motos</p>
+        </div>
+    </div>
+
+    <div id="modal-login">
+        <p class="title">Faça login para uma experiência
+            ainda melhor! ;D</p>
+        <a href="login.html" class="btn-login">Fazer login</a>
+        <p class="subtitle">Não tem uma conta? <a href="cadastro.html">Criar conta</a></p>
+        <p id="closeModalLogin">&times;</p>
+    </div>
+</body>
+
+</html>

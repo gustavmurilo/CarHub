@@ -1,0 +1,507 @@
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-bg);
+    gap: 70px;
+    outline: none;
+}
+
+/* Aparecer mensagem ao passar mouse por cima */
+
+.sec-pesquisar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 180px;
+    width: 100%;
+}
+
+.banner {
+    height: 38vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner2 {
+    height: 38vh;
+    width: 100%;
+    background: url('../img/banner2-roxo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.veiculo-selecionado {
+    border-bottom: 4px solid var(--roxo);
+    color: var(--cor-texto);
+    transition: 0.2s;
+}
+.veiculo-nao-selecionado {
+    border-bottom: 4px solid var(--cor-bg-sec);
+    color: var(--cor-texto-apagado);
+    transition: 0.2s;
+}
+
+#div-input-pesquisar-moto {
+    display: none;
+}
+
+.div-pesquisar-veiculos {
+    background-color: var(--cor-bg-sec);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 35px;
+    position: absolute;
+    z-index: 2;
+    bottom: -170px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    & .div-comprar {
+        display: flex;
+        gap: 20px;
+        & p {
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding-bottom: 10px;
+        }
+    }
+    & .div-input-pesquisar {
+        display: flex;
+        position: relative;
+        gap: 15px;
+        & input {
+            height: 60px;
+            width: 500px;
+            border: 2px solid var(--cor-texto-apagado);
+            border-radius: 10px;
+            padding-left: 50px;
+            outline: none;
+        }
+        & .pesquisar {
+            cursor: pointer;
+            height: 60px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            background-color: var(--roxo);
+            border-radius: 10px;
+            text-transform: uppercase;
+            color: var(--cor-bg-sec);
+            font-weight: 500;
+            transition: 0.1s;
+            &:hover {
+                background-color: var(--hover-roxo);
+            }
+        }
+        & i {
+            position: absolute;
+            left: 17px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: var(--cor-texto-apagado);
+        }
+    }
+}
+
+/* Div de sugestões (auto increment) */
+.div-sugestoes {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 500px;
+    max-height: 250px;
+    top: 125%;
+    background-color: #FFF;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    overflow-x: hidden;
+    border-radius: 12px;
+    & .div-marcas, .div-modelos {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & .title-sug {
+            background-color: var(--cor-texto);
+            color: var(--cor-bg-sec);
+            font-weight: 600;
+            font-size: 0.75rem;
+            padding: 6px 10px;
+            top: 0;
+            left: 0;
+        }
+        & .sugestao {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            padding: 12px 15px;
+            font-size: 0.9rem;
+            color: var(--cor-texto-apagado);
+            background-color: #fff;
+            cursor: pointer;
+            transition: 0.1s;
+            /* Classe para quando aparecer nada encontrado */
+            &.nada-encontrado {
+                cursor: auto;
+                &:hover {
+                    background-color: #fff;
+                    color: var(--cor-texto-apagado);
+                }
+            }
+            &:hover {
+                background-color: #fafafa;
+                color: var(--cor-texto);
+            }
+            & i {
+                position: static;
+                left: auto;
+                top: auto;
+                transform: inherit;
+                font-size: inherit;
+                color: inherit;
+            }
+        }
+    }
+}
+
+h4 {
+    color: var(--cor-titles);
+    font-size: 1.2rem;
+}
+
+.sec-marcas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    & .div-marcas {
+        display: flex;
+        gap: 20px;
+        & div {
+            transition: 0.2s;
+            cursor: pointer;
+            background-color: var(--cor-bg-sec);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(108, 29, 233, 0.3);
+            & img {
+                width: 100px;
+                height: auto;
+            }
+            &:hover {
+                scale: 1.07;
+            }
+        }
+    }
+}
+
+.sec-modelos {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    & .div-modelos {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        
+        & div::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.25s ease-in-out;
+        }
+        
+        & div:hover::before {
+            transform: scale(1.1);
+        }
+
+        & div {
+            cursor: pointer;
+            width: 218px;
+            height: 280px;
+            border-radius: 10px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            & .overlay {
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0));
+                left: 0;
+                top: 0;
+            }
+            & p {
+                font-size: 1.4rem;
+                color: var(--cor-bg-sec);
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+/* Carros */
+.eletricos {
+    background-image: url(../img/banner-carro/eletrico.webp);
+}
+.hatchback {
+    background-image: url(../img/banner-carro/bannerPopular.jpg);
+}
+.picapes {
+    background-image: url(../img/banner-carro/bannerPicapes.jpg);
+}
+.sedans {
+    background-image: url(../img/banner-carro/bannerSedans.jpg);
+}
+.suvs {
+    background-image: url(../img/banner-carro/bannerSUVs.png);
+}
+
+/* Motos */
+.esportivas {
+    background-image: url(../img/banner-moto/esportivas.jpg);
+}
+.street {
+    background-image: url(../img/banner-moto/street.jpg);
+}
+.trail {
+    background-image: url(../img/banner-moto/trail.avif);
+}
+.big-trail {
+    background-image: url(../img/banner-moto/big-trail.jpg);
+}
+.motocustom {
+    background-image: url(../img/banner-moto/motocustom.png);
+}
+
+/* Fim do Main */
+
+/* Responsivo */
+
+@media (max-width: 1240px) {
+    .div-pesquisar-veiculos {
+        padding: 35px;
+        gap: 25px;
+        bottom: -170px;
+        & .div-comprar {
+            gap: 20px;
+            & p {
+                font-size: 1rem;
+                padding-bottom: 5px;
+            }
+        }
+        & .div-input-pesquisar {
+            gap: 15px;
+            & input {
+                height: 60px;
+                width: 350px;
+                padding-left: 50px;
+                font-size: 0.9rem;
+            }
+            & p {
+                height: 60px;
+                padding: 0 20px;
+                width: 240px;
+                font-size: 0.85rem;
+            }
+            & span {
+                font-size: 0.85rem;
+            }
+            & i {
+                left: 22px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .div-sugestoes {
+        width: 350px;
+        & .div-marcas, .div-modelos {
+            & .title-sug {
+                width: 100%;
+                height: auto;
+            }
+            & .sugestao {
+                width: 100%;
+                height: auto;
+                & i {
+                    position: static;
+                    left: auto;
+                    top: auto;
+                    transform: inherit;
+                    font-size: inherit;
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main {
+        width: 90vw;
+    }
+    .sec-pesquisar {
+        width: 100vw;
+    }
+    .sec-marcas {
+        position: relative;
+        left: -20px;
+        width: 100%;
+        & h4 {
+            padding-left: 20px;
+        }
+        & .div-carrossel {
+            width: calc(100% + 20px);
+            overflow: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        & .div-marcas {
+            padding: 15px;
+            width: fit-content;
+        }
+    }
+    
+    .sec-modelos {
+        width: 100%;
+        & .div-carrossel {
+            width: 100%;
+            overflow: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        & .div-modelos {
+            width: fit-content;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-marcas {
+        & .div-marcas {
+            & div {
+                width: 110px;
+                height: 110px;
+                & img {
+                    width: 75px;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .sec-modelos {
+        & .div-modelos {
+            & div {
+                width: 140px;
+                height: 177px;
+                & p {
+                    font-size: 1.15rem;
+                }
+            }
+        }
+    }
+
+    .banner {
+        top: 0;
+        height: 15vh;
+    }
+
+    .div-pesquisar-veiculos {
+        padding: 25px;
+        gap: 20px;
+        bottom: -200px;
+        & .div-input-pesquisar {
+            gap: 15px;
+            flex-direction: column;
+            & input {
+                height: 50px;
+                width: 75vw;
+                padding-left: 35px;
+                font-size: 0.8rem;
+            }
+            & .div-sugestoes {
+                top: 55%;
+                width: 75vw;
+                & .sugestao {
+                    padding: 10px 14px;
+                    & i {
+                        position: static;
+                        left: auto;
+                        top: auto;
+                        transform: inherit;
+                        font-size: inherit;
+                        color: inherit;
+                    }
+                }
+            }
+            & .pesquisar {
+                height: 50px;
+                width: 75vw;
+                font-size: 0.8rem;
+            }
+            & span {
+                font-size: 0.8rem;
+            }
+            & i {
+                left: 15px;
+                font-size: 0.9rem;
+                top: 24%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    
+    .veiculo-nao-selecionado, .veiculo-selecionado {
+        font-size: 12px !important;
+    }
+}
+
+/* Fim do responsivo */
+
+
