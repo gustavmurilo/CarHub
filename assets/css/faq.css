@@ -12,14 +12,14 @@
 }
 
 :root {
-    --roxo: #FF270D;
-    --hover-roxo: #FF270D;
+    --vermelho: #FF270D;
+    --hover-vermelho: #FF270D;
     --cor-bg: #ECEDF2;
     --cor-bg-sec: #FFFFFF;
     --cor-texto: #262627;
     --cor-texto-apagado: #AEAEBA;
     --cor-titles: #696977;
-    --roxo-claro: #ECE1FE;
+    --vermelho-claro: #ffa39d;
 }
 
 /* Container principal */
@@ -121,7 +121,7 @@ main {
 
 .i-ajuda {
   font-size: 40px;
-  color: #6C1DE9;
+  color: #FF270D;
 }
 
 /* Back content */
@@ -140,8 +140,8 @@ main {
 }
 
 .div-as1 span:hover {
-  color: #6C1DE9;
-  text-decoration: underline #6C1DE9;
+  color: #FF270D;
+  text-decoration: underline #FF270D;
 }
 
 .div-as2 span {
@@ -152,7 +152,7 @@ main {
 }
 
 .div-as2 span:hover {
-  color: #6C1DE9;
+  color: #FF270D;
 }
 
 /* Título da seção */
@@ -199,8 +199,8 @@ main {
 }
 
 .input-container:focus-within {
-  border: 1.5px solid #6C1DE9;
-  color: #6C1DE9;
+  border: 1.5px solid #FF270D;
+  color: #FF270D;
 }
 
 .i-duvida {
@@ -210,7 +210,7 @@ main {
 }
 
 .input-container:focus-within .i-duvida {
-  color: #6C1DE9;
+  color: #FF270D;
 }
 
 .div-duvida {
@@ -272,13 +272,13 @@ main {
 }
 
 .faq-a:hover {
-  color: #6C1DE9;
-  text-decoration: underline #6C1DE9;
+  color: #FF270D;
+  text-decoration: underline #FF270D;
 }
 
 .btn-faleconosco{
   cursor: pointer;
-  background-color: var(--roxo);
+  background-color: var(--vermelho);
   color: var(--cor-bg-sec);
   font-weight: 600;
   display: flex;
@@ -291,7 +291,7 @@ main {
   padding: 15px;
   transition: 0.1s;
   &:hover {
-      background-color: var(--hover-roxo);
+      background-color: var(--hover-vermelho);
   }
 }
 

@@ -51,7 +51,7 @@
     border: none;
     font-size: 35px;
     font-weight: bold;
-    color: var(--roxo);
+    color: var(--vermelho);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +92,7 @@
 #addManutencao {
     display: flex;
     background-color: #ECEDF2;
-    color: var(--roxo);
+    color: var(--vermelho);
     font-size: 20px;
     padding: 20px;
     border-radius: 50%;
@@ -288,7 +288,7 @@ main {
     align-items: center;
     justify-content: center;
     background-color: var(--cor-bg);
-    color: var(--roxo);
+    color: var(--vermelho);
 }
 
 .div-buttons {
@@ -320,7 +320,7 @@ main {
         font-size: 17px;
         font-weight: 700;
         color: var(--cor-bg-sec);
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         cursor: pointer;
         transition: 0.2s;
 
@@ -336,7 +336,7 @@ main {
 
         &.reservar-cliente {
             width: 20%;
-            color: var(--roxo);
+            color: var(--vermelho);
             background-color: var(--cor-bg);
         }
 
@@ -353,7 +353,7 @@ main {
         font-size: 17px;
         font-weight: 700;
         color: var(--cor-bg-sec);
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         cursor: pointer;
         transition: 0.2s;
 
@@ -382,7 +382,7 @@ main {
 
 
     & .fa-calendar-check {
-        color: var(--roxo);
+        color: var(--vermelho);
         font-size: 1.7rem;
     }
 
@@ -403,7 +403,7 @@ main {
 
         & .icon-trash {
             font-size: 1.7rem;
-            color: var(--roxo);
+            color: var(--vermelho);
             background-color: #ECEDF2;
             width: 100%;
             height: 100%;
@@ -428,12 +428,12 @@ main {
 
 .div-content-venda-filho .mensagem {
     font-size: 15px;
-    color: var(--roxo);
+    color: var(--vermelho);
     font-weight: 500;
 }
 
 .color-1 {
-    color: var(--roxo);
+    color: var(--vermelho);
     font-size: 35px;
 }
 
@@ -673,7 +673,7 @@ main {
     transition: 0.1s;
 
     &:hover {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -688,7 +688,7 @@ main {
     transition: 0.1s;
 
     &:hover {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -717,7 +717,7 @@ main {
         transition: transform 0.2s ease, color 0.2s ease;
 
         &:hover {
-            color: var(--roxo);
+            color: var(--vermelho);
             transform: scale(1.1);
         }
     }
@@ -762,7 +762,7 @@ main {
         }
 
         i {
-            color: var(--roxo);
+            color: var(--vermelho);
             font-size: 80px;
         }
     }
@@ -812,7 +812,7 @@ main {
         transition: transform 0.2s ease, color 0.2s ease;
 
         &:hover {
-            color: var(--roxo);
+            color: var(--vermelho);
             transform: scale(1.1);
         }
     }
@@ -861,7 +861,7 @@ main {
         & .valor-result {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--roxo);
+            color: var(--vermelho);
         }
     }
 
@@ -870,14 +870,14 @@ main {
         padding: 15px;
         border-radius: 99px;
         border: none;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         color: var(--cor-bg-sec);
         font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 
@@ -890,7 +890,7 @@ main {
         cursor: pointer;
 
         &:hover {
-            color: var(--roxo);
+            color: var(--vermelho);
             text-decoration: underline;
         }
     }
@@ -950,7 +950,7 @@ main {
             text-align: center;
 
             & span {
-                color: var(--roxo);
+                color: var(--vermelho);
                 font-weight: 600;
             }
         }
@@ -962,14 +962,14 @@ main {
         padding: 15px;
         border-radius: 99px;
         border: none;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         color: var(--cor-bg-sec);
         font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
 
         &.disabled {
@@ -1036,7 +1036,7 @@ main {
         color: var(--cor-bg-sec);
         padding: 15px;
         border-radius: 50%;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         width: 55px;
         height: 55px;
         font-size: 1.4rem;
@@ -1060,7 +1060,7 @@ main {
         opacity: 0;
         background-color: #ECEDF2;
         border: 2px solid #d6d7dd;
-        color: var(--roxo);
+        color: var(--vermelho);
         font-size: 0.95rem;
         font-weight: 500;
         padding: 12px 23px 12px 12px;
@@ -1136,7 +1136,7 @@ main {
         border-radius: 10px;
         height: 100%;
         padding: 10px;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         align-items: center;
         justify-content: center;
         display: flex;
@@ -1149,7 +1149,7 @@ main {
         }
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 }
@@ -1188,7 +1188,7 @@ main {
         right: 25px;
         font-size: 1.6rem;
         cursor: pointer;
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 
     & p {
@@ -1232,7 +1232,7 @@ main {
             width: 100%;
 
             &:focus {
-                border: 1px solid var(--hover-roxo);
+                border: 1px solid var(--hover-vermelho);
                 outline: none;
             }
         }
@@ -1273,7 +1273,7 @@ main {
 
         & .button-cel {
             background: var(--cor-bg);
-            color: var(--roxo);
+            color: var(--vermelho);
             font-size: 14px;
 
             &:hover {
@@ -1282,11 +1282,11 @@ main {
         }
 
         & .button-add {
-            background: var(--roxo);
+            background: var(--vermelho);
             color: var(--cor-bg-sec);
 
             &:hover {
-                background-color: var(--hover-roxo);
+                background-color: var(--hover-vermelho);
             }
         }
     }
@@ -1297,12 +1297,12 @@ main {
     position: absolute;
     top: 13%;
     font-size: 1.4rem;
-    color: var(--roxo);
+    color: var(--vermelho);
     cursor: pointer;
     padding: 5px;
 
     &:hover {
-        color: var(--hover-roxo);
+        color: var(--hover-vermelho);
     }
 
     &#manutencao-prox {
@@ -1594,12 +1594,12 @@ tbody tr.tipo2 {
         position: absolute;
         bottom: 50px;
         border: none;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         cursor: pointer;
         transition: 0.2s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 }
@@ -1700,7 +1700,7 @@ tbody tr.tipo2 {
 .dot-spinner {
     --uib-size: 2.8rem;
     --uib-speed: .9s;
-    --uib-color: var(--roxo);
+    --uib-color: var(--vermelho);
     position: relative;
     display: flex;
     align-items: center;

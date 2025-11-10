@@ -12,14 +12,14 @@
 }
 
 :root {
-    --roxo: #FF270D;
-    --hover-roxo: #FF270D;
+    --vermelho: #FF270D;
+    --hover-vermelho: #FF270D;
     --cor-bg: #ECEDF2;
     --cor-bg-sec: #FFFFFF;
     --cor-texto: #262627;
     --cor-texto-apagado: #AEAEBA;
     --cor-titles: #696977;
-    --roxo-claro: #ECE1FE;
+    --vermelho-claro: #f77f7f;
 }
 
 .card-ajuda2{
@@ -361,9 +361,9 @@ button.owl-prev span{
 .form-contato-compacto input:focus,
 .form-contato-compacto select:focus,
 .form-contato-compacto textarea:focus {
-    border: 1px solid var(--roxo);
+    border: 1px solid var(--vermelho);
     outline: none;
-    box-shadow: 0 0 0 1px var(--roxo)
+    box-shadow: 0 0 0 1px var(--vermelho)
 }
 
 .input-help {
@@ -440,7 +440,7 @@ button.owl-prev span{
 }
 
 .btn-enviar {
-    background: var(--roxo);
+    background: var(--vermelho);
     color: white;
     padding: 12px 30px;
     border: none;
@@ -451,7 +451,7 @@ button.owl-prev span{
 }
 
 .btn-enviar:hover {
-    background: var(--hover-roxo);
+    background: var(--hover-vermelho);
 }
 
 /* Fim Fale conosco CSS */

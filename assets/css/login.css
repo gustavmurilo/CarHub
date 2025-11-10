@@ -12,13 +12,13 @@
 }
 
 :root {
-    --roxo: #FF270D;
-    --hover-roxo: #FF270D;
+    --vermelho: #FF270D;
+    --hover-vermelho: #FF270D;
     --cor-bg: #ECEDF2;
     --cor-texto: #262627;
     --cor-texto-apagado: #AEAEBA;
     --cor-bg-sec: #FFFFFF;
-    --roxo-claro: #ECE1FE;
+    --vermelho-claro: #fa9f9f;
 }
 
 body {
@@ -47,7 +47,7 @@ header {
 
     & img {
         width: auto;
-        height: 25px;
+        height: 50px;
     }
 
     & p,
@@ -58,7 +58,7 @@ header {
     }
 
     & span {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -179,12 +179,12 @@ header {
         z-index: 2;
 
         &:focus {
-            border: 2px var(--roxo) solid;
+            border: 2px var(--vermelho) solid;
         }
     }
 
     &:focus-within label {
-        color: var(--roxo);
+        color: var(--vermelho);
         top: 0;
         font-size: 0.75rem;
         z-index: 3;
@@ -225,12 +225,12 @@ header {
     transition: 0.15s;
 
     &:hover {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
 .icone-modal {
-    color: var(--roxo);
+    color: var(--vermelho);
     font-size: 4.5rem;
 }
 
@@ -250,7 +250,7 @@ header {
 
 #email-user,
 #email-user-validacao {
-    color: var(--roxo);
+    color: var(--vermelho);
     font-weight: 500;
 }
 
@@ -297,7 +297,7 @@ header {
 }
 
 .btn-acao {
-    background-color: var(--roxo);
+    background-color: var(--vermelho);
     color: var(--cor-bg-sec);
     border-radius: 10px;
     font-size: 15px;
@@ -309,7 +309,7 @@ header {
     cursor: pointer;
 
     &:hover {
-        background-color: var(--hover-roxo);
+        background-color: var(--hover-vermelho);
     }
 }
 
@@ -347,7 +347,7 @@ header {
 }
 
 .link-redirect a {
-    color: var(--roxo);
+    color: var(--vermelho);
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
@@ -370,7 +370,7 @@ footer {
     margin-top: 80px;
 
     & .div-contato {
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         padding: 40px 0;
         display: flex;
         align-items: flex-start;
@@ -434,7 +434,7 @@ footer {
         }
 
         & .net {
-            color: var(--roxo);
+            color: var(--vermelho);
             font-family: "Racing Sans One", serif;
 
         }

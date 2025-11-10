@@ -40,7 +40,7 @@ main {
 
 
 .veiculo-selecionado {
-    border-bottom: 4px solid var(--roxo);
+    border-bottom: 4px solid var(--vermelho);
     color: var(--cor-texto);
     transition: 0.2s;
 }
@@ -99,14 +99,14 @@ main {
             align-items: center;
             justify-content: center;
             width: 300px;
-            background-color: var(--roxo);
+            background-color: var(--vermelho);
             border-radius: 10px;
             text-transform: uppercase;
             color: var(--cor-bg-sec);
             font-weight: 500;
             transition: 0.1s;
             &:hover {
-                background-color: var(--hover-roxo);
+                background-color: var(--hover-vermelho);
             }
         }
         & i {
@@ -204,7 +204,7 @@ h4 {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            box-shadow: 0 0 20px rgba(108, 29, 233, 0.3);
+            box-shadow: 0 0 20px rgba(233, 48, 15, 0.3);
             & img {
                 width: 100px;
                 height: auto;

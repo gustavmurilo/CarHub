@@ -13,14 +13,14 @@
 
 
 :root {
-    --roxo: #FF270D;
-    --hover-roxo: #eb402d;
+    --vermelho: #FF270D;
+    --hover-vermelho: #eb402d;
     --cor-bg: #ECEDF2;
     --cor-texto: #262627;
     --cor-texto-apagado: #AEAEBA;
     --cor-bg-sec: #FFFFFF;
     --cor-titles: #696977;
-    --roxo-claro: #ECE1FE;
+    --vermelho-claro: rgb(255, 135, 135);
 }
 
 /* validação form */
@@ -85,7 +85,7 @@ header {
 
     & img {
         width: auto;
-        height: 25px;
+        height: 50px;
     }
 
     & p,
@@ -97,7 +97,7 @@ header {
     }
 
     & span {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -186,7 +186,7 @@ h1 {
             transition: 0.1s;
 
             &.selecionado {
-                border-left: solid 4px var(--roxo);
+                border-left: solid 4px var(--vermelho);
                 color: var(--cor-texto) !important;
 
                 & i,
@@ -196,7 +196,7 @@ h1 {
                 }
 
                 &:hover {
-                    border-left: solid 4px var(--roxo);
+                    border-left: solid 4px var(--vermelho);
                 }
             }
 
@@ -314,7 +314,7 @@ h1 {
 
 
 .sub-relatorio.destaque {
-    color: var(--roxo) !important;
+    color: var(--vermelho) !important;
     font-weight: 500;
 }
 
@@ -496,7 +496,7 @@ main {
 
     & button {
         width: 100% !important;
-        background: var(--roxo);
+        background: var(--vermelho);
         color: var(--cor-bg-sec);
         border: none;
         padding: 10px;
@@ -506,7 +506,7 @@ main {
         margin-top: 5px;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 }
@@ -671,7 +671,7 @@ main {
 
             &:focus-within label {
                 top: 0;
-                color: var(--roxo);
+                color: var(--vermelho);
                 font-size: 0.75rem;
                 background-color: var(--cor-bg-sec);
                 z-index: 3;
@@ -727,11 +727,11 @@ main {
             outline: none;
 
             &:hover {
-                border: 1px solid var(--roxo);
+                border: 1px solid var(--vermelho);
             }
 
             &:focus {
-                border: 1px solid var(--roxo);
+                border: 1px solid var(--vermelho);
             }
 
             &.campo-invalido {
@@ -741,7 +741,7 @@ main {
     }
 
     & button {
-        background: var(--roxo);
+        background: var(--vermelho);
         color: var(--cor-bg-sec);
         border: none;
         padding: 10px;
@@ -750,7 +750,7 @@ main {
         transition: 0.2s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 }
@@ -800,7 +800,7 @@ main {
 
 
 .cad-user {
-    background-color: var(--roxo);
+    background-color: var(--vermelho);
     height: 60px;
     color: var(--cor-bg-sec);
     border-radius: 10px;
@@ -821,12 +821,12 @@ main {
     }
 
     &:hover {
-        background-color: var(--hover-roxo);
+        background-color: var(--hover-vermelho);
     }
 }
 
 .cad-user2 {
-    background-color: var(--roxo);
+    background-color: var(--vermelho);
     height: 60px;
     color: var(--cor-bg-sec);
     border-radius: 10px;
@@ -847,7 +847,7 @@ main {
     }
 
     &:hover {
-        background-color: var(--hover-roxo);
+        background-color: var(--hover-vermelho);
     }
 }
 
@@ -921,7 +921,7 @@ main {
 .search-box input:focus,
 .status-box select:focus,
 .type-box select:focus {
-    border: 2px var(--roxo) solid;
+    border: 2px var(--vermelho) solid;
 }
 
 .search-box i {
@@ -950,7 +950,7 @@ main {
 }
 
 .btn-acao {
-    background-color: var(--roxo);
+    background-color: var(--vermelho);
     color: var(--cor-bg-sec);
     border-radius: 10px;
     font-size: 15px;
@@ -962,7 +962,7 @@ main {
     cursor: pointer;
 
     &:hover {
-        background-color: var(--hover-roxo);
+        background-color: var(--hover-vermelho);
     }
 }
 
@@ -1019,7 +1019,7 @@ tbody tr.tipo1 {
 }
 
 tbody tr.tipo2 {
-    background-color: var(--roxo-claro);
+    background-color: var(--vermelho-claro);
 }
 
 .edit-icon {
@@ -1079,12 +1079,12 @@ tbody tr.tipo2 {
 
         & label {
             font-size: 0.8rem;
-            color: var(--roxo);
+            color: var(--vermelho);
         }
     }
 
     & button {
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         padding: 10px;
         cursor: pointer;
         border: none;
@@ -1094,7 +1094,7 @@ tbody tr.tipo2 {
         transition: 0.2s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 }
@@ -1126,7 +1126,7 @@ tbody tr.tipo2 {
     }
 
     .cad-user2 {
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         height: 60px;
         color: var(--cor-bg-sec);
         border-radius: 10px;
@@ -1221,12 +1221,12 @@ tbody tr.tipo2 {
             z-index: 2;
 
             &:focus {
-                border: 2px var(--roxo) solid;
+                border: 2px var(--vermelho) solid;
             }
         }
 
         &:focus-within label {
-            color: var(--roxo);
+            color: var(--vermelho);
             top: 0;
             font-size: 0.75rem;
             z-index: 3;
@@ -1312,7 +1312,7 @@ tbody tr.tipo2 {
 }
 
 .btn-acao {
-    background-color: var(--roxo);
+    background-color: var(--vermelho);
     color: var(--cor-bg-sec);
     border-radius: 10px;
     font-size: 15px;
@@ -1324,7 +1324,7 @@ tbody tr.tipo2 {
     cursor: pointer;
 
     &:hover {
-        background-color: var(--hover-roxo);
+        background-color: var(--hover-vermelho);
     }
 }
 
@@ -1450,7 +1450,7 @@ tbody tr.tipo2 {
     transition: 0.1s;
 
     &:hover {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -1464,7 +1464,7 @@ tbody tr.tipo2 {
     transition: 0.1s;
 
     &:hover {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -1493,7 +1493,7 @@ tbody tr.tipo2 {
         transition: transform 0.2s ease, color 0.2s ease;
 
         &:hover {
-            color: var(--roxo);
+            color: var(--vermelho);
             transform: scale(1.1);
         }
     }
@@ -1538,7 +1538,7 @@ tbody tr.tipo2 {
         }
 
         i {
-            color: var(--roxo);
+            color: var(--vermelho);
             font-size: 50px;
         }
     }
@@ -1589,7 +1589,7 @@ tbody tr.tipo2 {
         transition: transform 0.2s ease, color 0.2s ease;
 
         &:hover {
-            color: var(--roxo);
+            color: var(--vermelho);
             transform: scale(1.1);
         }
     }
@@ -1638,7 +1638,7 @@ tbody tr.tipo2 {
         & .valor-result {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--roxo);
+            color: var(--vermelho);
         }
     }
 
@@ -1647,14 +1647,14 @@ tbody tr.tipo2 {
         padding: 15px;
         border-radius: 99px;
         border: none;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         color: var(--cor-bg-sec);
         font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 
@@ -1667,7 +1667,7 @@ tbody tr.tipo2 {
         cursor: pointer;
 
         &:hover {
-            color: var(--roxo);
+            color: var(--vermelho);
             text-decoration: underline;
         }
 
@@ -1765,7 +1765,7 @@ tbody tr.tipo2 {
             text-align: center;
 
             & span {
-                color: var(--roxo);
+                color: var(--vermelho);
                 font-weight: 600;
             }
         }
@@ -1777,14 +1777,14 @@ tbody tr.tipo2 {
         padding: 15px;
         border-radius: 99px;
         border: none;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         color: var(--cor-bg-sec);
         font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
 
         &.disabled {
@@ -1882,7 +1882,7 @@ tbody tr.tipo2 {
         .valor-result {
             font-size: 16px;
             font-weight: 600;
-            color: var(--roxo);
+            color: var(--vermelho);
         }
     }
 
@@ -1904,7 +1904,7 @@ tbody tr.tipo2 {
         }
 
         i {
-            color: var(--roxo);
+            color: var(--vermelho);
             font-size: 100px;
         }
     }
@@ -1918,7 +1918,7 @@ tbody tr.tipo2 {
     font-size: 17px;
     font-weight: 700;
     color: var(--cor-bg-sec);
-    background-color: var(--roxo);
+    background-color: var(--vermelho);
     cursor: pointer;
     transition: 0.2s;
 
@@ -1966,7 +1966,7 @@ tbody tr.tipo2 {
         cursor: pointer;
 
         &:hover {
-            background-color: var(--roxo);
+            background-color: var(--vermelho);
             color: var(--cor-bg-sec);
             transition: all 0.2s ease-in-out;
         }
@@ -2023,7 +2023,7 @@ tbody tr.tipo2 {
 }
 
 .div-car-p2 p span {
-    color: var(--roxo);
+    color: var(--vermelho);
 }
 
 .div-car-p3 {
@@ -2148,7 +2148,7 @@ tbody tr.tipo2 {
 
 .i-ajuda {
     font-size: 40px;
-    color: var(--roxo);
+    color: var(--vermelho);
 }
 
 /* Card Financiamento */
@@ -2160,7 +2160,7 @@ tbody tr.tipo2 {
 
 .i-financia {
     font-size: 40px;
-    color: var(--roxo);
+    color: var(--vermelho);
 }
 
 .card-financia {
@@ -2250,7 +2250,7 @@ tbody tr.tipo2 {
         gap: 10px;
         align-items: center;
         justify-content: center;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         color: var(--cor-bg-sec);
         font-weight: 600;
         border-radius: 500px;
@@ -2261,7 +2261,7 @@ tbody tr.tipo2 {
         transition: 0.2s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 }
@@ -2307,7 +2307,7 @@ tbody tr.tipo2 {
         & span {
             font-size: 0.85rem;
             font-weight: 600;
-            color: var(--roxo);
+            color: var(--vermelho);
         }
     }
 
@@ -2331,7 +2331,7 @@ tbody tr.tipo2 {
         }
 
         & .ver-detalhes {
-            background: var(--roxo);
+            background: var(--vermelho);
             color: var(--cor-bg-sec);
             padding: 12px;
             font-weight: 400;
@@ -2342,7 +2342,7 @@ tbody tr.tipo2 {
             text-align: center;
 
             &:hover {
-                background-color: var(--hover-roxo);
+                background-color: var(--hover-vermelho);
             }
         }
 
@@ -2386,7 +2386,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         align-items: center;
         align-self: center;
         gap: 10px;
-        background: var(--roxo);
+        background: var(--vermelho);
         cursor: pointer;
         padding: 15px 20px;
         border-radius: 10px;
@@ -2396,7 +2396,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         transition: 0.2s ease-in;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
             color: var(--cor-bg-sec);
         }
     }
@@ -2427,7 +2427,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
             gap: 5px;
 
             &.total {
-                background-color: var(--roxo);
+                background-color: var(--vermelho);
             }
 
             & .legenda {
@@ -2441,7 +2441,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
 
             & .numero {
                 font-size: 2.2rem;
-                color: var(--roxo);
+                color: var(--vermelho);
                 font-weight: 700;
                 line-height: 100%;
 
@@ -2578,12 +2578,12 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         z-index: 2;
 
         &:focus {
-            border: 2px var(--roxo) solid;
+            border: 2px var(--vermelho) solid;
         }
     }
 
     &:focus-within label {
-        color: var(--roxo);
+        color: var(--vermelho);
         top: 0;
         font-size: 0.75rem;
         z-index: 3;
@@ -2637,7 +2637,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
             padding: 15px;
             border-radius: 10px;
             cursor: pointer;
-            background-color: var(--roxo);
+            background-color: var(--vermelho);
             color: var(--cor-bg-sec);
             font-weight: 600;
             transition: 0.3s;
@@ -2652,7 +2652,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
             }
 
             &:hover {
-                background-color: var(--hover-roxo);
+                background-color: var(--hover-vermelho);
             }
         }
 
@@ -2711,7 +2711,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
     & i {
         font-size: 1.2rem;
         margin-left: 10px;
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -2738,7 +2738,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
     transition: 0.2s;
 
     &:hover {
-        color: var(--roxo);
+        color: var(--vermelho);
     }
 }
 
@@ -2786,18 +2786,18 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         padding: 15px;
         border-radius: 99px;
         cursor: pointer;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         color: var(--cor-bg-sec);
         font-weight: 600;
         transition: 0.3s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
 
         &#excluir-servico {
             background-color: var(--cor-bg);
-            color: var(--roxo);
+            color: var(--vermelho);
 
             &:hover {
                 background-color: #dedfe7;
@@ -2810,7 +2810,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         position: absolute;
         top: 25px;
         left: 25px;
-        color: var(--roxo);
+        color: var(--vermelho);
         font-size: 1.4rem;
         cursor: pointer;
     }
@@ -2884,7 +2884,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
             width: 100%;
 
             &:focus {
-                border: 1px solid var(--hover-roxo);
+                border: 1px solid var(--hover-vermelho);
                 outline: none;
             }
         }
@@ -2925,7 +2925,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
 
         & .button-cel {
             background: var(--cor-bg);
-            color: var(--roxo);
+            color: var(--vermelho);
             font-size: 14px;
 
             &:hover {
@@ -2934,12 +2934,12 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         }
 
         & .button-add {
-            background: var(--roxo);
+            background: var(--vermelho);
             color: var(--cor-bg-sec);
             width: 100%;
 
             &:hover {
-                background-color: var(--hover-roxo);
+                background-color: var(--hover-vermelho);
             }
         }
     }
@@ -3108,7 +3108,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
             position: absolute;
             top: 25px;
             left: 25px;
-            color: var(--roxo);
+            color: var(--vermelho);
             font-size: 1.4rem;
             cursor: pointer;
         }
@@ -3221,13 +3221,13 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         padding: 15px;
         border-radius: 99px;
         cursor: pointer;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         color: var(--cor-bg-sec);
         font-weight: 600;
         transition: 0.3s;
 
         &:hover {
-            background-color: var(--hover-roxo);
+            background-color: var(--hover-vermelho);
         }
     }
 
@@ -3235,7 +3235,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
         position: absolute;
         top: 25px;
         right: 25px;
-        color: var(--roxo);
+        color: var(--vermelho);
         font-size: 1.6rem;
         cursor: pointer;
     }
@@ -3345,7 +3345,7 @@ POR ENQUANTO NÃO TEM NENHUMA DIV, APENAS A MINHA CONTA QUE É PADRÃO
 }
 
 .balance-card {
-    background-color: var(--roxo-claro);
+    background-color: var(--vermelho-claro);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 5px;
@@ -3547,7 +3547,7 @@ footer {
     margin-top: 80px;
 
     & .div-contato {
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         padding: 40px 0;
         display: flex;
         align-items: flex-start;
@@ -3611,7 +3611,7 @@ footer {
         }
 
         & .net {
-            color: var(--roxo);
+            color: var(--vermelho);
             font-family: "Racing Sans One", serif;
 
         }

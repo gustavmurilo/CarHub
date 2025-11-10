@@ -109,7 +109,7 @@ main {
     align-items: center;
     justify-content: center;
     & #num-filtros-aplic {
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
         padding: 4px 7px 2px 7px;
         border-radius: 30px;
         font-weight: bold;
@@ -265,7 +265,7 @@ main {
         border-radius: 999px;
         top: 0;
         left: 0;
-        background-color: var(--roxo);
+        background-color: var(--vermelho);
     }
 }
 
@@ -330,7 +330,7 @@ main {
             text-transform: uppercase;
             & span {
                 font-size: inherit;
-                color: var(--roxo);
+                color: var(--vermelho);
                 text-transform: uppercase;
             }
         } 
@@ -342,7 +342,7 @@ main {
         } 
         
         & .ver-detalhes{
-            background: var(--roxo);
+            background: var(--vermelho);
             color: #fff;
             padding: 12px;
             font-weight: 400;
@@ -352,7 +352,7 @@ main {
             transition: 0.3s;
             text-align: center;
             &:hover {
-                background-color: var(--hover-roxo);
+                background-color: var(--hover-vermelho);
             }
         }& .container-info-card{
             color: var(--cor-titles);
@@ -393,7 +393,7 @@ main {
             scale: 1.03;
         }
         &.active {
-            border: 2px solid var(--roxo);
+            border: 2px solid var(--vermelho);
             box-shadow: 0 0 20px rgba(108, 29, 233, 0.3);
         }
         & a {
