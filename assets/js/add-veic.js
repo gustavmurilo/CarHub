@@ -46,7 +46,6 @@ $(document).ready(function() {
     })
 })
 
-// ???? (QM ADICIONOU ESSA PORRA AQUI)
 const renavamValidity = {
     'renavam-carro': false,
     'renavam-moto': false
@@ -347,16 +346,17 @@ $(document).ready(function () {
     };
     
     const camposQuilometragem = $('#quilometragem-carro, #quilometragem-moto');
-    
-    camposQuilometragem.each(function() {
-        $(this).data('valor-numerico', '');
+
+    // Atualiza o valor numérico sempre que o usuário digitar
+    camposQuilometragem.on('input', function () {
+        const valorNumerico = $(this).val().replace(/\D/g, '');
+        $(this).data('valor-numerico', valorNumerico);
     });
-    
-    $('#form-add-veic').on('submit', function() {
-        camposQuilometragem.each(function() {
-            const valorNumerico = $(this).data('valor-numerico');
-            // Garante que o valor numérico seja enviado corretamente
-            $(this).val(valorNumerico);
+
+    // Garante que o valor enviado seja apenas número
+    $('#form-add-veic').on('submit', function () {
+        camposQuilometragem.each(function () {
+            $(this).val($(this).data('valor-numerico'));
         });
     });
 
@@ -367,6 +367,7 @@ $(document).ready(function () {
     estadoMotoSelect.on("change", () => {
         addCidades(cidadeMotoSelect, estadoMotoSelect);
     });
+
 
     // Carrega os estados assim que a página é carregada
     carregarEstados(estadoCarroSelect);
